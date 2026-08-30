@@ -18,7 +18,9 @@ real, per the [Stack and hosting](003-stack-and-hosting.md) decision:
 - Create the Vercel project wired to the repo (AFK where `vercel`/`gh` auth
   allows; otherwise a precise HITL checklist).
 - Point **ausiejus.lt** at Vercel: DNS records at the .lt registrar are
-  HITL — hand Ignas the exact records to enter.
+  HITL — hand Ignas the exact records to enter. Note in the checklist that
+  **trailhead.ausiejus.lt** will need its own record later (Trailhead's
+  future deploy — that project's concern, but this domain's zone).
 - Ship a placeholder page (name + positioning line only) so the domain is
   live early; liveness beats emptiness per the research findings.
 

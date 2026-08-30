@@ -38,6 +38,7 @@ it ends when the site is live, not when a spec is written.
 - [Stack and hosting](tickets/003-stack-and-hosting.md): Next.js static export, vanilla CSS with custom-property tokens (the token layer is itself an exhibit), Vercel, canonical domain ausiejus.lt (already owned), public repo from first commit.
 - [The signature interactive moment](tickets/004-signature-interactive-moment.md): a quiet "◐ re-brand this page" control that swaps the token layer into fake partner brands, re-skinning the whole page including a token-aware topographic contour field that bends around the cursor — the page proves it's white-label by re-branding itself.
 - [Visual direction](tickets/005-visual-direction.md): Editorial serif — Newsreader throughout, warm paper, ~12vh spacing, single 640px column; the name's typeface never re-brands; system dark mode respected; first exhibit peeks above the fold; quiet-innovation budget = @property-typed tokens, View Transitions, scroll-driven animations (Houdini as optional easter egg).
+- [Case-study format and CV download](tickets/006-case-study-format-and-cv-download.md): one page, no detail pages or screenshots; three exhibit blocks of 2–3 first-person sentences (problem/ownership/outcome, ≤50 words); Trailhead links to trailhead.ausiejus.lt live + source; CV PDF at ausiejus.lt/cv.pdf from the footer.
 
 ## Not yet specified
 
