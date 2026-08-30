@@ -2,7 +2,7 @@
 title: Case-study format and CV download
 label: wayfinder:grilling
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [1]
 ---
