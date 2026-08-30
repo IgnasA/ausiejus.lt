@@ -2,7 +2,7 @@
 title: Make GitHub hold up to a look
 label: wayfinder:grilling
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [1]
 ---
