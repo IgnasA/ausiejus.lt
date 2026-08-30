@@ -25,27 +25,25 @@ it ends when the site is live, not when a spec is written.
 - Sessions should consult the `prototype` skill for design-question tickets
   and `grilling` + `domain-modeling` by default. Glossary lives in
   [CONTEXT.md](../CONTEXT.md).
-- Trailhead (../trailhead) is a likely flagship exhibit — its map/reveal work
-  is strong material — but the content inventory ticket decides that.
+- Trailhead (../trailhead) is the flagship exhibit (decided in the
+  positioning ticket); its repo is private until the GitHub ticket says
+  otherwise.
 
 ## Decisions so far
 
 <!-- one line per closed ticket: gist + link -->
 
 - [What makes minimal portfolios interesting](tickets/002-what-makes-minimal-portfolios-interesting.md): text-first skimmable first screen plus one small, discovered, gracefully-degrading moment attached to a real element (quiet generative background or typographic hero trick are the best-fit models); anything that delays reading the positioning line reads as gimmick.
+- [Positioning and content inventory](tickets/001-positioning-and-content-inventory.md): lane = "frontend engineer building design systems and white-label products — interfaces other companies ship as their own"; React/Next/TS market, remote + Europe, widened beyond fintech; exhibits = Trailhead (flagship) + Railsr onboarding and Equals design-system written case studies; identity = name/role/Vilnius + email/LinkedIn/GitHub, no photo; GitHub link conditional on cleanup.
 
 ## Not yet specified
 
-- **Case-study / project-page format** — how each exhibit is presented (live
-  demo? write-up? screenshots?). Depends on the content inventory.
 - **Build plan and milestones** — the m0…mN execution tickets. Chartable only
   once stack, visual direction, and the signature moment are locked.
 - **Domain and deployment setup** — registrar, host, DNS. Hangs on the stack
   and hosting decision.
 - **Quality bar** — accessibility, performance budget, SEO/meta/OG cards. To
   be set once there is a design to hold to it.
-- **CV** — downloadable resume, contact routes (email? form? socials?).
-  Depends on positioning.
 
 ## Out of scope
 
