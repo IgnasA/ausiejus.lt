@@ -2,7 +2,7 @@
 title: "m2: The moment, production-grade"
 label: wayfinder:task
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [10]
 ---
