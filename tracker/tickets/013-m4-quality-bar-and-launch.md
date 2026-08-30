@@ -2,7 +2,7 @@
 title: "m4: Quality bar and launch"
 label: wayfinder:task
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [12, 7]
 ---

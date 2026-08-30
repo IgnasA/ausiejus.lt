@@ -10,7 +10,7 @@ import { flushSync } from 'react-dom';
 const BRANDS = [
   { name: '', readout: '' },
   { name: 'aurora', readout: '--bg:#0e1024 · --accent:#8b87ff' },
-  { name: 'koral', readout: '--bg:#fff6f2 · --accent:#e4562e' },
+  { name: 'koral', readout: '--bg:#fff6f2 · --accent:#c8440e' },
   { name: 'mint', readout: '--bg:#f2f8f4 · --accent:#0d7a4f' },
 ] as const;
 

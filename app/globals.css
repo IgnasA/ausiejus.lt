@@ -64,13 +64,13 @@ html[data-brand='koral'] {
   --bg: #fff6f2;
   --ink: #2b1a14;
   --muted: #8a6355;
-  --accent: #e4562e;
+  --accent: #c8440e; /* AA on --bg (4.6:1) */
 }
 
 html[data-brand='mint'] {
   --bg: #f2f8f4;
   --ink: #12291c;
-  --muted: #5e7a6b;
+  --muted: #586f60; /* AA on --bg (5.1:1) */
   --accent: #0d7a4f;
 }
 
@@ -146,7 +146,6 @@ html.js .rebrand {
   color: var(--muted);
   margin-top: 8px;
   min-height: 1.2em;
-  opacity: 0.75;
   view-transition-name: token-readout;
 }
 
@@ -170,6 +169,7 @@ section {
 }
 
 h2 {
+  font-family: var(--font-italic), Georgia, serif;
   font-size: var(--size-label);
   font-weight: 500;
   font-style: italic;
@@ -209,10 +209,12 @@ li {
   }
 }
 
+/* Exhibit titles: weight 500 + full ink against the muted body text — the
+   contrast carries the emphasis, and the page ships no bold font file. */
 li h3 {
   display: inline;
   font-size: inherit;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .date {
@@ -231,6 +233,13 @@ a {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: color 0.6s ease;
+}
+
+a:focus-visible,
+.rebrand button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
 }
 
 footer {
