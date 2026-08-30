@@ -2,7 +2,7 @@
 title: "m3: Quiet innovations"
 label: wayfinder:task
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [11]
 ---
