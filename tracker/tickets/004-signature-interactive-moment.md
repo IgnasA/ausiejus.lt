@@ -1,7 +1,7 @@
 ---
 title: The signature interactive moment
 label: wayfinder:prototype
-status: open
+status: closed
 assignee: ignas
 map: ../map.md
 blocked-by: [1, 2]
@@ -23,9 +23,39 @@ still work for a recruiter who never notices it. Degrades gracefully
 
 Resolved when one moment is chosen and its prototype is linked as an asset.
 
-**Asset**: three candidates behind a `?variant=` switcher —
-`prototype/signature-moment.html` on branch `prototype/signature-moment`
-(`git show prototype/signature-moment:prototype/signature-moment.html`).
-A = "Re-brand this page" (live design-token swap into fake partner brands),
-B = quiet generative layer, C = typographic hero (cursor-weighted
-letterforms). Awaiting Ignas's pick.
+## Resolution
+
+**The moment: "◐ re-brand this page" over a token-aware contour field.**
+
+A quiet dotted-underline text control in the meta line. Each click swaps the
+design-token layer (`--bg/--ink/--accent/--face-display/--radius`) into a
+fake partner brand — Aurora (dark, serif, indigo), Koral (warm, pill radii),
+Mint (green, mono) — with a tiny monospace token readout, re-skinning the
+entire page **including** a generative background layer: slowly drifting
+topographic contour isolines (marching squares over animated value noise),
+one contour tinted with the brand accent, the field bending softly around
+the cursor.
+
+Why this shape:
+
+- It literally demonstrates the positioning — the page proves it's
+  white-label by re-branding itself, and no other portfolio can make that
+  move honestly.
+- The token-aware layer keeps the "exactly one moment" doctrine: the field
+  is the moment's ambient proof, not a second feature.
+- The contour field quietly rhymes with Trailhead's map work.
+
+Iteration history: round 1 offered three structurally different candidates
+(A re-brand button, B generative layer, C cursor-weighted typographic hero);
+Ignas's reaction was "A, but quieter, plus B, but more interesting", which v2
+unified. Round 2 offered contours vs flow-field trails for the layer;
+**contours won**. The typographic hero and flow trails are rejected.
+
+Constraints validated in the prototype: no-JS/reduced-motion page reads
+complete (control is progressive enhancement, field freezes), no console
+errors, works against the real page content.
+
+**Asset**: `prototype/signature-moment.html` on branch
+`prototype/signature-moment` (v2 = the winning design;
+`git show prototype/signature-moment:prototype/signature-moment.html`).
+Production rewrite happens in the build — prototype code is throwaway.
