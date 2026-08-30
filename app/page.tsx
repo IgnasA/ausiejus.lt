@@ -40,10 +40,10 @@ export default function Home() {
             <h3>Design system, Equals</h3>{' '}
             <span className="date">— 2025–</span>
             <p>
-              A merger left two codebases and two component libraries. I own
-              the design system that unified them — one library shipped
-              white-label by partner banks and fintechs, each with its own
-              brand, data, and regulatory constraints.
+              A merger left two codebases and two component libraries. I build
+              and maintain the design system that unified them — one library
+              shipped white-label by partner banks and fintechs, each with its
+              own brand, data, and regulatory constraints.
             </p>
           </li>
         </ul>

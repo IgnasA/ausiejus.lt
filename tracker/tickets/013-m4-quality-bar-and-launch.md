@@ -22,7 +22,12 @@ Quality bar (from the build plan):
 - **SEO/meta**: title, description, canonical, favicon, and a static OG
   card (name + positioning line, in the site's own type).
 - **cv.pdf** served at ausiejus.lt/cv.pdf — current CV updated to carry the
-  site URL.
+  site URL **and aligned with the site's ownership wording** (Ignas's
+  corrections, 2026-08-30): Equals "Own the shared design system…" →
+  "Build and maintain the shared design system…"; Railsr "…and owned the
+  component library behind every core product" → "…and helped maintain the
+  component library behind every core product." Ignas edits the CV source;
+  the site copy is the reference.
 
 Launch checklist (HITL where marked):
 

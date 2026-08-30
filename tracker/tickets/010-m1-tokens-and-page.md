@@ -1,7 +1,7 @@
 ---
 title: "m1: Token system and page content"
 label: wayfinder:task
-status: open
+status: closed
 assignee: ignas
 map: ../map.md
 blocked-by: [8]
@@ -24,3 +24,22 @@ Build the real token layer and the full page content on the scaffold from
 
 Done when the deployed page shows the real content in the real direction,
 light and dark, with the token layer clean enough to read as an exhibit.
+
+## Resolution
+
+Shipped on main (deploying via Vercel to the project URL; ausiejus.lt
+still pending the DNSSEC fix in ticket 008):
+
+- `app/globals.css`: `@property`-registered color tokens (--bg/--ink/
+  --muted/--accent), editorial palette light + dark, type and spacing
+  tokens, element styles per the 005 direction.
+- `app/page.tsx`: full one-page inventory with semantic landmarks —
+  header, three exhibit blocks, footer (Email/GitHub/LinkedIn/CV).
+- Exhibit copy drafted from the CV and corrected with Ignas: ownership
+  claims softened to "helped maintain" (Railsr) and "build and maintain"
+  (Equals). The matching CV edits are recorded in m4's cv.pdf step.
+- Verified: light and dark rendering, Newsreader via next/font, clean
+  console, static export builds green.
+
+Started while ticket 008 was still open (Ignas's call — only the
+DNSSEC/cert item remained; repo, Vercel, and scaffold existed).
