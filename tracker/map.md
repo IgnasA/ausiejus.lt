@@ -32,6 +32,8 @@ it ends when the site is live, not when a spec is written.
 
 <!-- one line per closed ticket: gist + link -->
 
+- [What makes minimal portfolios interesting](tickets/002-what-makes-minimal-portfolios-interesting.md): text-first skimmable first screen plus one small, discovered, gracefully-degrading moment attached to a real element (quiet generative background or typographic hero trick are the best-fit models); anything that delays reading the positioning line reads as gimmick.
+
 ## Not yet specified
 
 - **Case-study / project-page format** — how each exhibit is presented (live
