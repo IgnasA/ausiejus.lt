@@ -44,6 +44,10 @@ it ends when the site is live, not when a spec is written.
 - [m1: Token system and page content](tickets/010-m1-tokens-and-page.md): typed tokens + editorial palette (light/dark) and the full one-page content shipped; exhibit copy corrected with Ignas — ownership claims softened to "helped maintain"/"build and maintain", with matching CV edits queued in m4.
 - [m2: The moment, production-grade](tickets/011-m2-the-moment.md): shipped — Rebrand control (data-brand token swap, readout, no-CLS) + ContourField (marching squares, live --accent, cursor bend), full degradation contract (no-JS gate, reduced-motion static draws, touch).
 - [m3: Quiet innovations](tickets/012-m3-quiet-innovations.md): shipped — View Transition scoped to the token readout (root crossfade disabled so the live token morph stays visible) and pure-CSS scroll-driven settle for the work list; both feature-detected, inert elsewhere.
+- [Provision the pipeline](tickets/008-provision-the-pipeline.md): public repo github.com/IgnasA/ausiejus.lt → Vercel → ausiejus.lt on Vercel nameservers; the stale DNSSEC DS was the last blocker — removed, cert issued, site live.
+- [m4: Quality bar and launch](tickets/013-m4-quality-bar-and-launch.md): AA contrast in every brand×scheme, first load ~240KB, CLS 0, Lighthouse 95/100/100/100; OG card, favicon, canonical; cv.pdf (corrected, merged Railsr→Equals role) serving; LinkedIn links the site. **https://ausiejus.lt is live — destination reached.** GitHub curation script handed to Ignas as the one cosmetic follow-up.
+
+**The map is complete: every ticket closed, the destination reached.**
 
 ## Not yet specified
 

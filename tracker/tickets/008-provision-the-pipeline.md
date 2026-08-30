@@ -1,7 +1,7 @@
 ---
 title: Provision the pipeline
 label: wayfinder:task
-status: open
+status: closed
 assignee: ignas
 map: ../map.md
 blocked-by: [3]
@@ -57,3 +57,19 @@ registry — Vercel DNS doesn't sign, so cert issuance fails until Ignas
 removes DNSSEC in the iv.lt panel. Ignas chose to skip for now; m1 starts
 against the vercel.app URL, and this ticket closes when the DS is removed
 and https://ausiejus.lt serves.
+
+## Resolution
+
+**https://ausiejus.lt is live.** Record of what was provisioned:
+
+- Repo: https://github.com/IgnasA/ausiejus.lt (public; main + research and
+  prototype branches).
+- Vercel project `ausiejus-lt`, auto-deploying from main
+  (https://ausiejus-lt.vercel.app).
+- DNS: nameservers ns1/ns2.vercel-dns.com at the iv.lt registrar; the
+  stale DNSSEC DS record was removed by Ignas (verified gone at both
+  authoritative .lt nameservers), after which Let's Encrypt issued the
+  cert (CN=ausiejus.lt) and the site serves over HTTP/2.
+- trailhead.ausiejus.lt: with Vercel running the zone, attaching the
+  subdomain later is a domain-add on the Trailhead Vercel project — no
+  registrar visit needed.

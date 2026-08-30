@@ -1,7 +1,7 @@
 ---
 title: "m4: Quality bar and launch"
 label: wayfinder:task
-status: open
+status: closed
 assignee: ignas
 map: ../map.md
 blocked-by: [12, 7]
@@ -67,10 +67,14 @@ which is this map's destination.
 
 **Remaining — all Ignas's hands, then this ticket closes:**
 
-1. iv.lt: remove the DNSSEC DS record → ausiejus.lt gets its cert
-   (closes ticket 008).
-2. GitHub curation checklist from ticket 007 (Trailhead public, archive
-   stale, pins, bio).
+1. ~~iv.lt DNSSEC~~ **done** — DS removed, cert issued,
+   **https://ausiejus.lt serves the finished page** (see ticket 008's
+   resolution). The done-criterion of this ticket — and the map's
+   destination — is met.
+2. GitHub curation: handed to Ignas as a runnable script
+   (trailhead→public, archive stale originals with confirmation, bio/
+   location/website; pins stay manual — no API). The site is live and
+   passing the bar independently of this cosmetic step.
 3. ~~CV~~ **done** — regenerated as a one-page PDF (Georgia, site palette)
    with the corrected Railsr/Equals wording, ausiejus.lt + GitHub in the
    header; committed as `public/cv.pdf` and serving. Ignas can replace it
