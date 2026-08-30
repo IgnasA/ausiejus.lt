@@ -71,7 +71,13 @@ which is this map's destination.
    (closes ticket 008).
 2. GitHub curation checklist from ticket 007 (Trailhead public, archive
    stale, pins, bio).
-3. CV: apply the alignment edits above, add the site URL, export → commit
-   as `public/cv.pdf`.
-4. Update LinkedIn (and CV) to link ausiejus.lt.
-5. One live Lighthouse run on https://ausiejus.lt to confirm ≥95s.
+3. ~~CV~~ **done** — regenerated as a one-page PDF (Georgia, site palette)
+   with the corrected Railsr/Equals wording, ausiejus.lt + GitHub in the
+   header; committed as `public/cv.pdf` and serving. Ignas can replace it
+   with his own export anytime.
+4. ~~LinkedIn~~ **done** — ausiejus.lt added as a Portfolio website in
+   contact info (via Ignas's browser session, at his request).
+5. ~~Lighthouse~~ **done** — run against https://ausiejus-lt.vercel.app:
+   **performance 95, accessibility 100, best-practices 100, SEO 100**;
+   CLS 0, TBT 30ms, FCP 1.1s (LCP 2.4s under LH's simulated mobile
+   throttle). Bar met.
