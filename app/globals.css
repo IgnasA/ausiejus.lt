@@ -1,0 +1,29 @@
+/* Design tokens — the full typed (@property) token system lands in m1.
+   This stub carries the decided editorial-serif palette. */
+:root {
+  --bg: #faf6ef;
+  --ink: #221d16;
+  --muted: #7a6f5f;
+  --accent: #221d16;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14110c;
+    --ink: #ece7dd;
+    --muted: #93897a;
+    --accent: #ece7dd;
+  }
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.6;
+}
