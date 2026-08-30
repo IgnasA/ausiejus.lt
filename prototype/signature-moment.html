@@ -1,0 +1,235 @@
+<!doctype html>
+<!-- PROTOTYPE — throwaway. Three candidates for the one signature interactive
+     moment, switchable via ?variant= (A|B|C) or the bottom bar / arrow keys.
+     Real page content so variants aren't judged in a vacuum. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signature moment — prototype</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --ink: #1a1a1a;
+    --muted: #6b6b66;
+    --accent: #1a1a1a;
+    --face: -apple-system, "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+    --face-display: var(--face);
+    --radius: 0px;
+    --size-body: 17px;
+    --size-big: clamp(34px, 6vw, 56px);
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--face); font-size: var(--size-body); line-height: 1.6;
+    transition: background .5s ease, color .5s ease;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 12vh 24px 20vh; position: relative; z-index: 1; }
+  h1 {
+    font-family: var(--face-display); font-size: var(--size-big);
+    font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 14px;
+  }
+  .positioning { font-size: var(--size-body); color: var(--ink); max-width: 46ch; }
+  .meta { color: var(--muted); margin-top: 10px; }
+  section { margin-top: 9vh; }
+  h2 { font-size: var(--size-body); font-weight: 600; color: var(--muted);
+       text-transform: uppercase; letter-spacing: .08em; font-size: 13px; margin-bottom: 18px; }
+  ul { list-style: none; }
+  li { padding: 14px 0; border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+  li b { font-weight: 600; }
+  li a { color: var(--accent); }
+  li p { color: var(--muted); max-width: 52ch; }
+  footer { margin-top: 9vh; color: var(--muted); }
+  footer a { color: var(--accent); margin-right: 18px; }
+  a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  /* ---------- Variant A: re-brand control ---------- */
+  .rebrand { display: none; margin-top: 26px; }
+  body.v-a .rebrand { display: block; }
+  .rebrand button {
+    font: inherit; font-size: 14px; color: var(--muted);
+    background: none; border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+    border-radius: var(--radius); padding: 7px 14px; cursor: pointer;
+    transition: border-radius .5s ease, color .3s;
+  }
+  .rebrand button:hover { color: var(--ink); }
+  .token-readout {
+    font-family: ui-monospace, Menlo, monospace; font-size: 11.5px;
+    color: var(--muted); margin-top: 10px; min-height: 1.2em; opacity: .8;
+  }
+  /* fake partner brands = a token swap, nothing else */
+  body.brand-aurora { --bg:#0e1024; --ink:#eceaf6; --muted:#8f8cb0; --accent:#8b87ff;
+                      --face-display: Georgia, "Times New Roman", serif; --radius: 2px; }
+  body.brand-koral  { --bg:#fff6f2; --ink:#2b1a14; --muted:#9c7365; --accent:#e4562e;
+                      --radius: 999px; }
+  body.brand-mint   { --bg:#f2f8f4; --ink:#12291c; --muted:#5e7a6b; --accent:#0d7a4f;
+                      --face-display: ui-monospace, Menlo, monospace; --radius: 6px; }
+
+  /* ---------- Variant B: generative canvas ---------- */
+  #field { position: fixed; inset: 0; z-index: 0; display: none; pointer-events: none; }
+  body.v-b #field { display: block; }
+
+  /* ---------- Variant C: typographic hero ---------- */
+  body.v-c h1 span { font-weight: 300; transition: font-weight .18s ease-out; }
+
+  /* ---------- Switcher (not part of the design) ---------- */
+  #switcher {
+    position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+    background: #111; color: #fff; border-radius: 999px; z-index: 10;
+    display: flex; align-items: center; gap: 4px; padding: 6px 10px;
+    font-size: 13px; box-shadow: 0 4px 18px rgba(0,0,0,.35);
+    font-family: -apple-system, system-ui, sans-serif;
+  }
+  #switcher button { background: none; border: 0; color: #fff; font-size: 15px;
+                     cursor: pointer; padding: 2px 8px; }
+  #switcher span { min-width: 210px; text-align: center; }
+</style>
+</head>
+<body>
+
+<canvas id="field"></canvas>
+
+<main>
+  <header>
+    <h1 id="name">Ignas Ausiejus</h1>
+    <p class="positioning">Frontend engineer building design systems and
+      white-label products — interfaces other companies ship as their own.</p>
+    <p class="meta">Vilnius · currently at Equals</p>
+
+    <div class="rebrand">
+      <button id="rebrandBtn">◐ This page is white-label — re-brand it</button>
+      <div class="token-readout" id="tokens"></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Selected work</h2>
+    <ul>
+      <li><b><a href="#">Trailhead</a></b> — 2026<p>Your flight history,
+        rebuilt from your inbox: extraction pipeline, map, and a scroll-told
+        reveal. Live, with source.</p></li>
+      <li><b>Embeddable onboarding, Railsr</b> — 2021–2025<p>A regulated
+        card-programme onboarding flow that clients run inside their own
+        applications.</p></li>
+      <li><b>Design system, Equals</b> — 2025–<p>One component library
+        unifying two codebases after a merger, shipped white-label by partner
+        banks and fintechs.</p></li>
+    </ul>
+  </section>
+
+  <footer>
+    <a href="#">Email</a><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">CV</a>
+  </footer>
+</main>
+
+<div id="switcher">
+  <button id="prev">←</button><span id="label"></span><button id="next">→</button>
+</div>
+
+<script>
+  // ---------- switcher ----------
+  const VARIANTS = {
+    A: 'Re-brand this page',
+    B: 'Quiet generative layer',
+    C: 'Typographic hero',
+  };
+  const keys = Object.keys(VARIANTS);
+  let current = new URLSearchParams(location.search).get('variant');
+  if (!keys.includes(current)) current = 'A';
+
+  function apply(v) {
+    current = v;
+    document.body.className = 'v-' + v.toLowerCase();
+    document.getElementById('label').textContent = v + ' — ' + VARIANTS[v];
+    const url = new URL(location); url.searchParams.set('variant', v);
+    history.replaceState(null, '', url);
+    resetBrand(); setupHero(); // re-baseline per variant
+  }
+  const step = d => apply(keys[(keys.indexOf(current) + d + keys.length) % keys.length]);
+  document.getElementById('prev').onclick = () => step(-1);
+  document.getElementById('next').onclick = () => step(1);
+  addEventListener('keydown', e => {
+    if (/input|textarea/i.test(e.target.tagName)) return;
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+
+  // ---------- Variant A: re-brand ----------
+  const BRANDS = [
+    ['', 'default — your tokens'],
+    ['brand-aurora', '--bg:#0e1024 · --accent:#8b87ff · display: Georgia · --radius:2px'],
+    ['brand-koral',  '--bg:#fff6f2 · --accent:#e4562e · --radius:999px'],
+    ['brand-mint',   '--bg:#f2f8f4 · --accent:#0d7a4f · display: mono · --radius:6px'],
+  ];
+  let brandIdx = 0;
+  function resetBrand() {
+    BRANDS.forEach(([c]) => c && document.body.classList.remove(c));
+    brandIdx = 0; document.getElementById('tokens').textContent = '';
+    document.body.classList.add('v-' + current.toLowerCase());
+  }
+  document.getElementById('rebrandBtn').onclick = () => {
+    BRANDS.forEach(([c]) => c && document.body.classList.remove(c));
+    brandIdx = (brandIdx + 1) % BRANDS.length;
+    const [cls, readout] = BRANDS[brandIdx];
+    if (cls) document.body.classList.add(cls);
+    document.getElementById('tokens').textContent = readout;
+  };
+
+  // ---------- Variant B: generative field ----------
+  const cv = document.getElementById('field'), ctx = cv.getContext('2d');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pts = [], mouse = { x: -9999, y: -9999 };
+  function sizeCanvas() {
+    cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio;
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+    pts = Array.from({ length: Math.floor(innerWidth * innerHeight / 14000) }, () => ({
+      x: Math.random() * innerWidth, y: Math.random() * innerHeight,
+      a: Math.random() * Math.PI * 2,
+    }));
+  }
+  sizeCanvas(); addEventListener('resize', sizeCanvas);
+  addEventListener('mousemove', e => { mouse = { x: e.clientX, y: e.clientY }; });
+  function tick(t) {
+    if (document.body.classList.contains('v-b')) {
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      const dark = document.body.classList.contains('brand-aurora');
+      ctx.strokeStyle = dark ? 'rgba(236,234,246,.14)' : 'rgba(26,26,26,.10)';
+      for (const p of pts) {
+        p.a += Math.sin(t / 4000 + p.x / 300) * 0.012;
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy);
+        if (d < 160) p.a += (dx * Math.cos(p.a + Math.PI/2) + dy * Math.sin(p.a + Math.PI/2)) > 0 ? .05 : -.05;
+        if (!reduced) { p.x += Math.cos(p.a) * .25; p.y += Math.sin(p.a) * .25; }
+        if (p.x < 0) p.x = innerWidth; if (p.x > innerWidth) p.x = 0;
+        if (p.y < 0) p.y = innerHeight; if (p.y > innerHeight) p.y = 0;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.x + Math.cos(p.a) * 14, p.y + Math.sin(p.a) * 14);
+        ctx.stroke();
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // ---------- Variant C: typographic hero ----------
+  const h1 = document.getElementById('name'), plain = h1.textContent;
+  function setupHero() {
+    if (current === 'C') {
+      h1.innerHTML = [...plain].map(ch =>
+        ch === ' ' ? ' ' : `<span>${ch}</span>`).join('');
+    } else h1.textContent = plain;
+  }
+  addEventListener('mousemove', e => {
+    if (current !== 'C') return;
+    for (const s of h1.querySelectorAll('span')) {
+      const r = s.getBoundingClientRect();
+      const d = Math.hypot(e.clientX - (r.left + r.width/2), e.clientY - (r.top + r.height/2));
+      s.style.fontWeight = Math.round(Math.max(300, 900 - d * 3.2) / 100) * 100;
+    }
+  });
+
+  apply(current);
+</script>
+</body>
+</html>
