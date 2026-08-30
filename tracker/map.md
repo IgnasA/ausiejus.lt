@@ -35,13 +35,12 @@ it ends when the site is live, not when a spec is written.
 
 - [What makes minimal portfolios interesting](tickets/002-what-makes-minimal-portfolios-interesting.md): text-first skimmable first screen plus one small, discovered, gracefully-degrading moment attached to a real element (quiet generative background or typographic hero trick are the best-fit models); anything that delays reading the positioning line reads as gimmick.
 - [Positioning and content inventory](tickets/001-positioning-and-content-inventory.md): lane = "frontend engineer building design systems and white-label products — interfaces other companies ship as their own"; React/Next/TS market, remote + Europe, widened beyond fintech; exhibits = Trailhead (flagship) + Railsr onboarding and Equals design-system written case studies; identity = name/role/Vilnius + email/LinkedIn/GitHub, no photo; GitHub link conditional on cleanup.
+- [Stack and hosting](tickets/003-stack-and-hosting.md): Next.js static export, vanilla CSS with custom-property tokens (the token layer is itself an exhibit), Vercel, canonical domain ausiejus.lt (already owned), public repo from first commit.
 
 ## Not yet specified
 
 - **Build plan and milestones** — the m0…mN execution tickets. Chartable only
   once stack, visual direction, and the signature moment are locked.
-- **Domain and deployment setup** — registrar, host, DNS. Hangs on the stack
-  and hosting decision.
 - **Quality bar** — accessibility, performance budget, SEO/meta/OG cards. To
   be set once there is a design to hold to it.
 

@@ -1,7 +1,7 @@
 ---
 title: Stack and hosting
 label: wayfinder:grilling
-status: open
+status: closed
 assignee: ignas
 map: ../map.md
 blocked-by: [1]
@@ -26,3 +26,25 @@ Sub-decisions:
 
 Resolved when the stack is named and the hosting/domain path is decided
 (actual provisioning graduates from the fog as a task ticket).
+
+## Resolution
+
+- **Framework**: Next.js with static export — the React/Next/TS market's
+  default; nothing on the page needs a server. Pure stack signaling.
+- **Styling**: vanilla CSS with custom-property design tokens (hand-rolled
+  type scale, spacing, color). No Tailwind: the positioning is "owns design
+  systems", so a small immaculate token layer in plain CSS is itself an
+  exhibit when employers view source.
+- **Host**: Vercel free tier; preview deploys will serve the prototype
+  tickets too.
+- **Domain**: **ausiejus.lt** — Ignas already owns it. No purchase needed;
+  surname-matching, and the .lt reads naturally for a Vilnius engineer
+  targeting Europe. (Fact for the record: ignasausiejus.dev/.com and
+  ausiejus.dev/.com were all available per RDAP on 2026-08-30, ignas.dev
+  taken — noted in case a hedge redirect is ever wanted.)
+- **Repo**: public on github.com/IgnasA from the first commit, clean history
+  and a real README — the repo is part of the pitch, and it gives the
+  GitHub-cleanup ticket one fresh pinned repo for free.
+
+Provisioning (repo + scaffold + Vercel + DNS at the .lt registrar) graduated
+to the [Provision the pipeline](008-provision-the-pipeline.md) task ticket.
