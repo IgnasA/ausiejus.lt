@@ -26,3 +26,27 @@ real, per the [Stack and hosting](003-stack-and-hosting.md) decision:
 
 Resolved when https://ausiejus.lt serves the placeholder from the repo's
 main branch. Record: repo URL, Vercel project name, DNS records entered.
+
+## Progress
+
+**Done (AFK)**: Next.js static-export scaffold on main — Newsreader via
+`next/font`, the editorial token stub (light + dark), placeholder page
+(name + positioning + Vilnius), real README. `npm run build` verified green
+(Next 16.3.3 / React 19.2.8 / TS 7.0.2, export in `out/`).
+
+**Blocked**: repo publish + push denied by the session's permission
+classifier — publishing is Ignas's to trigger.
+
+**HITL checklist for Ignas**:
+
+1. Publish the repo (from the repo root):
+   `gh repo create ausiejus.lt --public --source . --remote origin --push`
+   then `git push origin research/minimal-portfolios prototype/signature-moment prototype/visual-direction`
+2. Vercel: vercel.com/new → import `IgnasA/ausiejus.lt` → framework
+   auto-detects Next.js → Deploy. No env vars needed.
+3. Project → Settings → Domains → add `ausiejus.lt`. Enter the DNS records
+   Vercel shows at the .lt registrar (typically `A @ → 76.76.21.21`;
+   Vercel's dashboard values are authoritative). Remember the zone will
+   later also carry `trailhead.ausiejus.lt`.
+4. When https://ausiejus.lt serves the placeholder, say so — that closes
+   this ticket and unblocks m1.
