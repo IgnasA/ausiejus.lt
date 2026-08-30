@@ -43,6 +43,7 @@ it ends when the site is live, not when a spec is written.
 - [Make GitHub hold up to a look](tickets/007-make-github-hold-up.md): Trailhead audit clean → goes public; archive stale originals, keep-or-delete forks manually; pin exactly ausiejus.lt + trailhead; bio/location/website set to the positioning and domain — execution is Ignas's checklist, verified by m4.
 - [m1: Token system and page content](tickets/010-m1-tokens-and-page.md): typed tokens + editorial palette (light/dark) and the full one-page content shipped; exhibit copy corrected with Ignas — ownership claims softened to "helped maintain"/"build and maintain", with matching CV edits queued in m4.
 - [m2: The moment, production-grade](tickets/011-m2-the-moment.md): shipped — Rebrand control (data-brand token swap, readout, no-CLS) + ContourField (marching squares, live --accent, cursor bend), full degradation contract (no-JS gate, reduced-motion static draws, touch).
+- [m3: Quiet innovations](tickets/012-m3-quiet-innovations.md): shipped — View Transition scoped to the token readout (root crossfade disabled so the live token morph stays visible) and pure-CSS scroll-driven settle for the work list; both feature-detected, inert elsewhere.
 
 ## Not yet specified
 
