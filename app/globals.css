@@ -26,6 +26,27 @@
   initial-value: #7a6f5f;
 }
 
+/* Inputs to the Houdini twin of the contour field (public/topo.js): time
+   arrives as an animated registered number, the pointer as two more — the
+   worklet repaints on invalidation, zero JavaScript per frame. */
+@property --topo-t {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --topo-mx {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: -9999;
+}
+
+@property --topo-my {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: -9999;
+}
+
 :root {
   --bg: #faf6ef;
   --ink: #221d16;
@@ -124,7 +145,16 @@ html.js .rebrand {
   visibility: visible;
 }
 
-.rebrand button {
+.jsonly {
+  visibility: hidden;
+}
+
+html.js .jsonly {
+  visibility: visible;
+}
+
+.rebrand button,
+.inspect-toggle {
   font: inherit;
   color: var(--muted);
   background: none;
@@ -136,8 +166,50 @@ html.js .rebrand {
 }
 
 .rebrand button:hover,
-.rebrand button:focus-visible {
+.rebrand button:focus-visible,
+.inspect-toggle:hover,
+.inspect-toggle:focus-visible {
   color: var(--ink);
+}
+
+/* The color well: pick any color, the page derives a whole brand from it. */
+.own {
+  cursor: pointer;
+}
+
+.own input {
+  inline-size: 15px;
+  block-size: 15px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  vertical-align: -2px;
+}
+
+.own input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.own input::-webkit-color-swatch {
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+}
+
+.own input::-moz-color-swatch {
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+}
+
+.own input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Live Vilnius time: tabular digits over an SSR-rendered placeholder of the
+   same width, so the real value lands with zero layout shift. */
+.clock {
+  font-variant-numeric: tabular-nums;
 }
 
 .token-readout {
@@ -162,6 +234,50 @@ html.js .rebrand {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+}
+
+/* Houdini mode (press H): the canvas hands the field to a CSS paint()
+   worklet; time is a CSS animation on --topo-t, alternated to avoid a seam
+   at the loop point. */
+#field-paint {
+  display: none;
+}
+
+html.houdini #field {
+  display: none;
+}
+
+html.houdini #field-paint {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: paint(topo);
+  animation: topo-drift 240s linear infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.houdini #field-paint {
+    animation: none;
+  }
+}
+
+@keyframes topo-drift {
+  to {
+    --topo-t: 8;
+  }
+}
+
+html.houdini body::after {
+  content: 'renderer: css paint(topo) — press H to switch back';
+  position: fixed;
+  right: 12px;
+  bottom: 10px;
+  z-index: 1;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
 }
 
 section {
@@ -228,6 +344,36 @@ li p {
   margin-top: 4px;
 }
 
+/* Per-exhibit stack line: space always reserved (no layout shift), faded in
+   on hover/focus where hovering exists, simply visible where it doesn't. */
+.stack {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+@media (hover: hover) {
+  .stack {
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  li:hover .stack,
+  li:focus-within .stack {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack {
+    transition: none;
+    transform: none;
+  }
+}
+
 a {
   color: var(--accent);
   text-decoration-thickness: 1px;
@@ -249,4 +395,30 @@ footer {
 
 footer a {
   margin-right: 18px;
+}
+
+/* Token inspector: crosshair + dashed outline on the annotated element, and
+   a pointer-following tooltip reading computed values live. */
+html.inspect,
+html.inspect main {
+  cursor: crosshair;
+}
+
+.inspecting {
+  outline: 1px dashed var(--accent);
+  outline-offset: 5px;
+}
+
+.token-tip {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  white-space: pre;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  padding: 6px 10px;
 }

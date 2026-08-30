@@ -5,8 +5,12 @@ import { useEffect, useRef } from 'react';
 /* Token-aware topographic contour field (tracker/tickets/004): marching
    squares over animated value noise, one contour tinted with the live
    --accent (so the @property interpolation shows during a re-brand), and a
-   soft bend around the cursor. Decorative only: aria-hidden, pointer-events
-   none, frozen under prefers-reduced-motion. */
+   soft bend around the cursor — or a finger, on touch. Decorative only:
+   aria-hidden, pointer-events none, frozen under prefers-reduced-motion.
+
+   Easter egg: pressing H swaps this <canvas> renderer for a Houdini twin —
+   the same field drawn by a CSS paint() worklet (public/topo.js), animated
+   by a registered @property number with zero JavaScript per frame. */
 
 const CELL = 26;
 const THRESHOLDS = [0.38, 0.48, 0.58, 0.68];
@@ -38,8 +42,11 @@ function noise(x: number, y: number, z: number) {
   return v;
 }
 
+let hinted = false;
+
 export default function ContourField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const paintRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,6 +58,8 @@ export default function ContourField() {
     let width = 0, height = 0;
     const mouse = { x: -9999, y: -9999 };
     let raf = 0;
+    let houdini = document.documentElement.classList.contains('houdini');
+    let workletLoaded = false;
     const timeouts: ReturnType<typeof setTimeout>[] = [];
 
     const fieldAt = (x: number, y: number, t: number) => {
@@ -121,9 +130,62 @@ export default function ContourField() {
       raf = requestAnimationFrame(tick);
     };
 
-    const onMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+    const startTicking = () => {
+      if (!reduced && !houdini && !raf) raf = requestAnimationFrame(tick);
+    };
+    const stopTicking = () => {
+      cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
+    /* In Houdini mode the paint worklet reads the pointer through registered
+       number properties — each write invalidates paint(), so the bend works
+       there too. */
+    const syncPointer = (x: number, y: number) => {
+      mouse.x = x;
+      mouse.y = y;
+      if (houdini && paintRef.current) {
+        paintRef.current.style.setProperty('--topo-mx', x.toFixed(1));
+        paintRef.current.style.setProperty('--topo-my', y.toFixed(1));
+      }
+    };
+
+    const onMove = (e: MouseEvent) => syncPointer(e.clientX, e.clientY);
+
+    const onTouch = (e: TouchEvent) => {
+      const t = e.touches[0];
+      if (t) syncPointer(t.clientX, t.clientY);
+    };
+
+    /* The easter egg toggle. Chromium-only by nature; elsewhere it says so
+       in the console and leaves the canvas alone. */
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.key !== 'h' && e.key !== 'H') || e.metaKey || e.ctrlKey || e.altKey)
+        return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable))
+        return;
+      const paintWorklet = (CSS as unknown as { paintWorklet?: { addModule(url: string): Promise<void> } })
+        .paintWorklet;
+      if (!paintWorklet) {
+        console.info('◐ no CSS Paint API here — the Houdini twin needs Chromium.');
+        return;
+      }
+      const apply = () => {
+        houdini = !houdini;
+        document.documentElement.classList.toggle('houdini', houdini);
+        if (houdini) stopTicking();
+        else startTicking();
+        if (reduced) draw(0);
+      };
+      if (!houdini && !workletLoaded) {
+        paintWorklet.addModule('/topo.js').then(() => {
+          workletLoaded = true;
+          apply();
+        });
+      } else {
+        apply();
+      }
     };
 
     // Reduced motion: static field, redrawn at the ends of the token
@@ -134,22 +196,44 @@ export default function ContourField() {
       timeouts.push(setTimeout(() => draw(0), 700));
     };
 
+    if (!hinted) {
+      hinted = true;
+      console.info(
+        '%c◐ contour field: <canvas> renderer.%c There is a Houdini twin — ' +
+          'press H to switch to a CSS paint() worklet driven by an animated ' +
+          '@property (Chromium). Source: https://github.com/IgnasA/ausiejus.lt',
+        'font-weight:600',
+        ''
+      );
+    }
+
     size();
     addEventListener('resize', size);
     addEventListener('rebrand', onRebrand);
+    addEventListener('keydown', onKey);
     if (!reduced) {
       addEventListener('mousemove', onMove, { passive: true });
-      raf = requestAnimationFrame(tick);
+      addEventListener('touchstart', onTouch, { passive: true });
+      addEventListener('touchmove', onTouch, { passive: true });
+      startTicking();
     }
 
     return () => {
-      cancelAnimationFrame(raf);
+      stopTicking();
       timeouts.forEach(clearTimeout);
       removeEventListener('resize', size);
       removeEventListener('rebrand', onRebrand);
+      removeEventListener('keydown', onKey);
       removeEventListener('mousemove', onMove);
+      removeEventListener('touchstart', onTouch);
+      removeEventListener('touchmove', onTouch);
     };
   }, []);
 
-  return <canvas id="field" ref={canvasRef} aria-hidden="true" />;
+  return (
+    <>
+      <canvas id="field" ref={canvasRef} aria-hidden="true" />
+      <div id="field-paint" ref={paintRef} aria-hidden="true" />
+    </>
+  );
 }
