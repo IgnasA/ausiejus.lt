@@ -2,7 +2,7 @@
 title: Visual direction
 label: wayfinder:prototype
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [4]
 ---
