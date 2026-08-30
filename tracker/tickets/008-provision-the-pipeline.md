@@ -49,3 +49,11 @@ classifier — publishing is Ignas's to trigger.
    later also carry `trailhead.ausiejus.lt`.
 4. When https://ausiejus.lt serves the placeholder, say so — that closes
    this ticket and unblocks m1.
+
+**Status 2026-08-30**: repo public and pushed; Vercel project created and
+domain added; nameservers switched to ns1/ns2.vercel-dns.com. **Remaining
+blocker**: a stale DNSSEC **DS record** (`32260 8 2 7704…`) at the .lt
+registry — Vercel DNS doesn't sign, so cert issuance fails until Ignas
+removes DNSSEC in the iv.lt panel. Ignas chose to skip for now; m1 starts
+against the vercel.app URL, and this ticket closes when the DS is removed
+and https://ausiejus.lt serves.

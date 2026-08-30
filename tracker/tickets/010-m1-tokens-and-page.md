@@ -2,7 +2,7 @@
 title: "m1: Token system and page content"
 label: wayfinder:task
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [8]
 ---
