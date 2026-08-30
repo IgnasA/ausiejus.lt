@@ -39,9 +39,8 @@ classifier — publishing is Ignas's to trigger.
 
 **HITL checklist for Ignas**:
 
-1. Publish the repo (from the repo root):
-   `gh repo create ausiejus.lt --public --source . --remote origin --push`
-   then `git push origin research/minimal-portfolios prototype/signature-moment prototype/visual-direction`
+1. ~~Publish the repo~~ **done** — https://github.com/IgnasA/ausiejus.lt
+   (main + research/prototype branches pushed; description and homepage set).
 2. Vercel: vercel.com/new → import `IgnasA/ausiejus.lt` → framework
    auto-detects Next.js → Deploy. No env vars needed.
 3. Project → Settings → Domains → add `ausiejus.lt`. Enter the DNS records
