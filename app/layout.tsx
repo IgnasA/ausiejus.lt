@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Newsreader } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import ContourField from './components/ContourField';
 import './globals.css';
 
 /* Static instances, not the variable font: roman 400/500 plus a single
@@ -48,7 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: "document.documentElement.classList.add('js')",
           }}
         />
+        {/* The field lives in the layout so it — and a picked brand — carry
+            across client-side navigation between pages. */}
+        <ContourField />
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -116,6 +116,47 @@ main {
   z-index: 1;
 }
 
+/* The landing page: one centered screen over the field, no scroll — the
+   abstraction is the point. The work lives behind one door. */
+main.home {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 48px;
+}
+
+/* The door to the work: its own line between the identity and the links. */
+.work-link {
+  margin-top: min(9vh, 72px);
+}
+
+.work-link a {
+  font-family: var(--font-italic), Georgia, serif;
+  font-style: italic;
+  font-size: var(--size-label);
+  white-space: nowrap;
+}
+
+main.home footer {
+  margin-top: min(9vh, 72px);
+}
+
+/* The work page's way home. */
+.crumb {
+  margin-bottom: min(9vh, 72px);
+}
+
+.crumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.crumb a:hover,
+.crumb a:focus-visible {
+  color: var(--ink);
+}
+
 h1 {
   font-size: var(--size-display);
   font-weight: 500;
@@ -284,6 +325,11 @@ section {
   margin-top: var(--gap-section);
 }
 
+/* The crumb already provides the gap on the work page. */
+.crumb + section {
+  margin-top: 0;
+}
+
 h2 {
   font-family: var(--font-italic), Georgia, serif;
   font-size: var(--size-label);
@@ -388,13 +434,14 @@ a:focus-visible,
   border-radius: 1px;
 }
 
+/* Flex, because JSX leaves no whitespace between the links to wrap at. */
 footer {
   margin-top: var(--gap-section);
   color: var(--muted);
-}
-
-footer a {
-  margin-right: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
 }
 
 /* Token inspector: crosshair + dashed outline on the annotated element, and
