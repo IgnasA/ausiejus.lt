@@ -25,6 +25,12 @@ Choosing the site's technology to match the job market being targeted,
 because employers read the source and the repo. The stack is part of the
 pitch, not just a build tool.
 
+## Quiet innovation
+
+A technique the page demonstrates only to those who look — invisible to the
+skim, unmistakable in the source or devtools. The page carries a small
+budget of these; none may delay or distract from the content.
+
 ## Positioning statement
 
 The one-line answer to "what is Ignas selling?" that the whole page hangs

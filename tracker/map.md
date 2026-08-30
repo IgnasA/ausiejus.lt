@@ -37,13 +37,12 @@ it ends when the site is live, not when a spec is written.
 - [Positioning and content inventory](tickets/001-positioning-and-content-inventory.md): lane = "frontend engineer building design systems and white-label products — interfaces other companies ship as their own"; React/Next/TS market, remote + Europe, widened beyond fintech; exhibits = Trailhead (flagship) + Railsr onboarding and Equals design-system written case studies; identity = name/role/Vilnius + email/LinkedIn/GitHub, no photo; GitHub link conditional on cleanup.
 - [Stack and hosting](tickets/003-stack-and-hosting.md): Next.js static export, vanilla CSS with custom-property tokens (the token layer is itself an exhibit), Vercel, canonical domain ausiejus.lt (already owned), public repo from first commit.
 - [The signature interactive moment](tickets/004-signature-interactive-moment.md): a quiet "◐ re-brand this page" control that swaps the token layer into fake partner brands, re-skinning the whole page including a token-aware topographic contour field that bends around the cursor — the page proves it's white-label by re-branding itself.
+- [Visual direction](tickets/005-visual-direction.md): Editorial serif — Newsreader throughout, warm paper, ~12vh spacing, single 640px column; the name's typeface never re-brands; system dark mode respected; first exhibit peeks above the fold; quiet-innovation budget = @property-typed tokens, View Transitions, scroll-driven animations (Houdini as optional easter egg).
 
 ## Not yet specified
 
-- **Build plan and milestones** — the m0…mN execution tickets. Chartable only
-  once stack, visual direction, and the signature moment are locked.
-- **Quality bar** — accessibility, performance budget, SEO/meta/OG cards. To
-  be set once there is a design to hold to it.
+<!-- empty — everything in scope is now a ticket. The build plan (with the
+     quality bar folded in) graduated to the Build plan ticket. -->
 
 ## Out of scope
 
