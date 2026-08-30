@@ -1,7 +1,7 @@
 ---
 title: Make GitHub hold up to a look
 label: wayfinder:grilling
-status: open
+status: closed
 assignee: ignas
 map: ../map.md
 blocked-by: [1]
@@ -43,3 +43,25 @@ either done (AFK where possible) or handed over as a precise HITL checklist.
 
 Publishing Trailhead's source is safe. The portfolio-repo half of this
 ticket resolved itself: github.com/IgnasA/ausiejus.lt is public (ticket 008).
+
+## Resolution
+
+Decisions (Ignas approved the recommendations):
+
+- **Trailhead goes public** — audit passed; the flagship's "source" link is
+  honest.
+- **Stale originals get archived**; old forks are left (or deleted by Ignas
+  at will — deletion stays strictly manual).
+- **Pins**: exactly two — `ausiejus.lt` and `trailhead`.
+- **Bio**: "Frontend engineer — design systems & white-label · ausiejus.lt",
+  location Vilnius, website https://ausiejus.lt. No profile README.
+
+The session's permission classifier blocks account-changing GitHub calls,
+so execution is Ignas's checklist (m4 verifies it before launch):
+
+1. `gh repo edit IgnasA/trailhead --visibility public --accept-visibility-change-consequences`
+2. Archive stale originals (rule: original, untouched since ~2023, not
+   trailhead/ausiejus.lt — e.g. liteboard, aerial-portfolio,
+   frontend-party): `gh repo archive IgnasA/<name> --yes` each.
+3. On github.com/IgnasA: pin `ausiejus.lt` + `trailhead`; set the bio,
+   location, and website above.

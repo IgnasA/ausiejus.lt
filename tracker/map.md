@@ -40,6 +40,7 @@ it ends when the site is live, not when a spec is written.
 - [Visual direction](tickets/005-visual-direction.md): Editorial serif — Newsreader throughout, warm paper, ~12vh spacing, single 640px column; the name's typeface never re-brands; system dark mode respected; first exhibit peeks above the fold; quiet-innovation budget = @property-typed tokens, View Transitions, scroll-driven animations (Houdini as optional easter egg).
 - [Case-study format and CV download](tickets/006-case-study-format-and-cv-download.md): one page, no detail pages or screenshots; three exhibit blocks of 2–3 first-person sentences (problem/ownership/outcome, ≤50 words); Trailhead links to trailhead.ausiejus.lt live + source; CV PDF at ausiejus.lt/cv.pdf from the footer.
 - [Build plan](tickets/009-build-plan.md): provisioning acts as m0, then m1 tokens+content → m2 the moment → m3 quiet innovations → m4 quality bar and launch (a11y AA, LCP<1.5s, CLS 0, ≤250KB, Lighthouse ≥95); m4 also waits on the GitHub ticket and is the destination.
+- [Make GitHub hold up to a look](tickets/007-make-github-hold-up.md): Trailhead audit clean → goes public; archive stale originals, keep-or-delete forks manually; pin exactly ausiejus.lt + trailhead; bio/location/website set to the positioning and domain — execution is Ignas's checklist, verified by m4.
 
 ## Not yet specified
 
