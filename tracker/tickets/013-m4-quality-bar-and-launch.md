@@ -42,3 +42,36 @@ Launch checklist (HITL where marked):
 
 Done when https://ausiejus.lt serves the finished page passing the bar —
 which is this map's destination.
+
+## Progress (2026-08-30)
+
+**Quality bar — done and verified:**
+
+- **Contrast**: scripted WCAG audit of ink/muted/accent against bg for all
+  five themes (light, dark, aurora, koral, mint). Two failures fixed:
+  koral accent → `#c8440e` (4.6:1), mint muted → `#586f60` (5.1:1).
+  Everything now ≥4.5:1. Readout opacity removed (it undercut effective
+  contrast); visible `:focus-visible` rings added for links and the
+  control.
+- **Performance**: fonts switched from two variable files to static
+  instances — roman 400/500 + italic 500 only, **no bold ships** (exhibit
+  titles emphasize via weight-500 ink against muted body text). Measured
+  in-browser: only the two preloaded font files fetch (82KB); JS 448KB raw
+  → ~145–170KB compressed on Vercel. First load ≈ 235–245KB ✤ ≤250KB
+  budget met. **CLS measured 0.0000** (buffered layout-shift observer).
+  LCP is static text with `font-display: swap`. Lighthouse itself not
+  runnable in this environment — run once live as a launch check.
+- **SEO/meta**: metadataBase + canonical, OG/twitter cards with a
+  generated 1200×630 `og.png` (site palette, Georgia standing in for
+  Newsreader), `icon.svg` favicon of the ◐ moment glyph.
+
+**Remaining — all Ignas's hands, then this ticket closes:**
+
+1. iv.lt: remove the DNSSEC DS record → ausiejus.lt gets its cert
+   (closes ticket 008).
+2. GitHub curation checklist from ticket 007 (Trailhead public, archive
+   stale, pins, bio).
+3. CV: apply the alignment edits above, add the site URL, export → commit
+   as `public/cv.pdf`.
+4. Update LinkedIn (and CV) to link ausiejus.lt.
+5. One live Lighthouse run on https://ausiejus.lt to confirm ≥95s.
