@@ -32,8 +32,8 @@ export default function Home() {
               Clients needed a regulated card-programme onboarding flow inside
               their own applications. I built the embeddable onboarding UI for
               Credit-Card-as-a-Service and the self-service app businesses used
-              to operate their programmes, and owned the component library
-              behind every core product.
+              to operate their programmes, and helped maintain the component
+              library behind every core product.
             </p>
           </li>
           <li>
