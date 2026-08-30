@@ -1,8 +1,8 @@
 ---
 title: Build plan
 label: wayfinder:grilling
-status: open
-assignee:
+status: closed
+assignee: ignas
 map: ../map.md
 blocked-by: [6]
 ---
@@ -31,3 +31,28 @@ To settle here, then spawn as tickets:
 
 Resolved when the milestone tickets exist, wired with blocking, and the
 map's fog is empty.
+
+## Resolution
+
+Four milestones, each one session, chained after the provisioning task
+(which acts as m0):
+
+- **m0** = [Provision the pipeline](008-provision-the-pipeline.md) (repo,
+  scaffold, Vercel, DNS, live placeholder) — already a ticket.
+- **[m1: Token system and page content](010-m1-tokens-and-page.md)**
+  (blocked by 008) — typed tokens in the Editorial serif direction + dark
+  set, full one-page inventory, exhibit copy drafted with Ignas.
+- **[m2: The moment, production-grade](011-m2-the-moment.md)** (blocked by
+  m1) — production rewrite of the re-brand + contour field with its full
+  degradation contract.
+- **[m3: Quiet innovations](012-m3-quiet-innovations.md)** (blocked by m2)
+  — View Transitions, scroll-driven animations, all feature-detected.
+- **[m4: Quality bar and launch](013-m4-quality-bar-and-launch.md)**
+  (blocked by m3 **and** the GitHub ticket 007, since launch links the
+  profile) — a11y AA, LCP < 1.5s / CLS 0 / ≤250KB / Lighthouse ≥95,
+  SEO/OG, cv.pdf, launch checklist. m4's completion is the destination.
+
+Quality bar numbers live in m4's body. The **Houdini Paint Worklet easter
+egg is ruled out of this map's scope** (post-launch garnish, Chromium-only;
+revisit as a fresh effort if ever). With this, the fog is empty and every
+remaining step to the destination is a wired ticket.
