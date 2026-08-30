@@ -1,8 +1,5 @@
 # ausiejus.lt
 
-Personal site of Ignas Ausiejus — frontend engineer building design systems
-and white-label products.
-
 ## Stack
 
 - Next.js (static export) + TypeScript
