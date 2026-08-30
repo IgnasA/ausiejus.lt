@@ -5,7 +5,9 @@ Research findings for ticket
 Surveyed 2026-08-30 by fetching the portfolio sites directly, plus award/curation
 galleries (Awwwards, minimal.gallery) and hiring-side writeups (Josh Comeau's
 *Building an Effective Dev Portfolio*, the profy.dev survey of 60+ hiring
-managers).
+managers). A second verification pass on 2026-08-30 re-fetched the named sites,
+added two more first-person screening sources, and recorded which
+roundup-staple sites are now dead (see the status notes under (d)).
 
 ## TL;DR
 
@@ -88,11 +90,23 @@ p5aholic.me (all fetched directly):
 - **A single humanizing note** — a "Now" philosophy section (paco.me), a
   hand-painted hometown illustration (leerob.com), a location/weather stamp
   (henry.codes). One per page, no more.
+- **The gateway extreme is a legitimate pattern.** frankchimero.com is name +
+  location + four links; adamwathan.me is avatar + nav + two paragraphs under a
+  "Who the hell am I?" heading. Both read as complete pages — hierarchy from
+  type scale and whitespace alone, no cards or rules (https://frankchimero.com,
+  https://adamwathan.me).
+- **Versioning as a liveness signal.** Lynn Fisher footers "v. XIX";
+  henry.codes marks seasons ("ver. ss25"). The site advertises its own
+  maintenance — screeners read staleness fast, and a dead-feeling minimal site
+  reads as an empty one.
 - Gallery curation agrees: minimal.gallery's portfolio tag and Awwwards'
   minimal collection consistently feature strong-typography, restraint-first
   sites where "minimal design signals confidence — strong work needs no
   embellishment" (https://minimal.gallery/tag/portfolio/,
-  https://www.awwwards.com/websites/minimal/).
+  https://www.awwwards.com/websites/minimal/). Awwwards' portfolio-category
+  *winners*, by contrast, skew studio/3D/scroll-heavy — individual dev entries
+  like wodniack.dev are the exception there
+  (https://www.awwwards.com/websites/winner_category_portfolio/).
 
 ## (c) What the hiring side responds to vs. what reads as gimmick
 
@@ -113,6 +127,27 @@ p5aholic.me (all fetched directly):
   Academy, DigitalOcean, Unsplash): a portfolio is "a highlight reel" of 2–5
   projects; be a "tour guide" through decisions; memorable, personal copy beats
   template copy (https://www.joshwcomeau.com/effective-portfolio/).
+- **First-person: the 30-second cut is real, and it's mostly hygiene.** Matej
+  Latin (Lead UX/Product Designer in Big Tech who reviewed application
+  portfolios at volume): recruiters spend ~6 seconds on a resume and only
+  somewhat longer on a portfolio; instant rejects are quality lapses
+  (pixelated images, typos), generic titles, weak openers, unclear ownership
+  ("we"-blur), and excessive length. Substance over style; templates can't
+  mask weak process
+  (https://adplist.substack.com/p/only-30-seconds-to-reject-your-portfolio).
+- **Responds to: a stated lane and level.** GreatFrontEnd's hiring-framed
+  guides: reviewers want "evidence of judgment over visual polish" — ownership,
+  scope, decisions about state/data/performance/accessibility — and should
+  "leave with a clear idea of your likely level." Recommended first screen: a
+  direct lane statement ("Senior frontend engineer focused on React,
+  TypeScript, design systems"), best case study immediately, contact links,
+  2–4 case studies max
+  (https://www.greatfrontend.com/blog/frontend-developer-portfolio).
+- **Named gimmick list from the same source:** "many candidates overbuild the
+  shell and under-explain the work"; excessive animations that delay content;
+  badge rows, stats cards, contribution-snake animations, long tech-icon
+  grids; "perfect narratives sound less believable than specific ownership"
+  (https://www.greatfrontend.com/blog/frontend-developer-github-profile).
 - **Responds to: context per project** — problem, what you owned, outcome,
   live link + source link. Reviewers repeatedly flag "beautiful final design
   with no context" as the top failure (e.g.
@@ -143,7 +178,25 @@ p5aholic.me (all fetched directly):
 | https://henry.codes | Henry Desroches | Digital-garden voice, dark intimate palette, location stamp; poetic copy |
 | https://cassie.codes | Cassie Evans (GSAP) | (Retired) animated SVG self-portrait as the canonical hero-moment example |
 | https://bruno-simon.com | Bruno Simon | Maximalist counterexample: 3D driving game; brilliant, and everything the skim forbids |
+| https://frankchimero.com | Frank Chimero | Gateway at its most extreme: name, location, four links; pure typographic restraint |
+| https://adamwathan.me | Adam Wathan (Tailwind) | Text card with voice ("Who the hell am I?"); differentiation via copy, zero effects |
+| https://wodniack.dev | Antoine Wodniack (16x Awwwards SOTD) | One motif (binary strings) threaded through a high-contrast minimal layout; contrast toggle |
 | https://www.awwwards.com/websites/minimal/ / https://minimal.gallery/tag/portfolio/ | — | Living galleries for calibrating current minimal-portfolio taste |
+
+Status notes (verified 2026-08-30):
+
+- **cassie.codes** is a deliberate farewell page: "It was a joy to maintain a
+  personal site and to share when I felt I was sharing for people. It feels
+  different now." Cite the animated-SVG idea, not the live site.
+- **jason.af** fails TLS certificate verification; Lengstorf's canonical site
+  is https://lengstorf.com. **sdw.me** no longer resolves. **godly.website**'s
+  portfolio gallery 301-redirects to recent.design — defunct as a source.
+- **p5aholic.me** maintains a "Copycats" page because its austere-text-over-
+  shader formula is the most-imitated portfolio pattern going — a caution
+  about adopting it wholesale.
+- minimal.gallery's portfolio tag currently features ~23 sites (e.g.
+  felixpeault.com, jacobince.com, minwookshin.com, anatoly.design) — a usable
+  browsing pool, though several block automated fetching.
 
 ## Implications for Ignas's page
 
@@ -164,5 +217,10 @@ p5aholic.me (all fetched directly):
 - Projects as a short curated list (2–5) with problem/ownership/outcome lines
   and live+source links — lists, not card grids.
 - One humanizing note maximum (a "now" line, a place, an illustration).
+- Ship a liveness signal (dated work, a version or "last updated" note, Lynn
+  Fisher-style) — staleness is read fast and reads as emptiness.
+- Write project blurbs as ownership + tradeoffs, not adjectives: "perfect
+  narratives sound less believable than specific ownership," and "we"-blur is
+  an instant reject for volume screeners.
 - Keep the source presentable: the survey says reviewers who do click through
   go to GitHub; the repo is part of the exhibit (stack signaling ticket).
