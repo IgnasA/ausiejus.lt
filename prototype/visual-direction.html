@@ -93,13 +93,20 @@
     color: var(--muted); margin-top: 8px; min-height: 1.2em; opacity: .75;
   }
 
-  /* fake partner brands (the moment) — override any direction */
+  /* fake partner brands (the moment) — colors only; the name's typeface is
+     identity and never re-brands */
   body.brand-aurora { --bg:#0e1024 !important; --ink:#eceaf6 !important; --muted:#8f8cb0 !important;
-                      --accent:#8b87ff !important; --face-display: Georgia, serif !important; }
+                      --accent:#8b87ff !important; }
   body.brand-koral  { --bg:#fff6f2 !important; --ink:#2b1a14 !important; --muted:#9c7365 !important;
                       --accent:#e4562e !important; }
   body.brand-mint   { --bg:#f2f8f4 !important; --ink:#12291c !important; --muted:#5e7a6b !important;
-                      --accent:#0d7a4f !important; --face-display: ui-monospace, Menlo, monospace !important; }
+                      --accent:#0d7a4f !important; }
+
+  /* quiet innovation: tokens are typed and animatable — the canvas reads the
+     interpolating --accent every frame, so the accent contour morphs between
+     brands natively */
+  @property --accent { syntax: '<color>'; inherits: true; initial-value: #1a1a1a; }
+  body { transition: background .6s ease, color .6s ease, --accent .6s ease; }
 
   #field { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 
@@ -179,9 +186,9 @@
   // ---------- the moment (decided): re-brand + contour field ----------
   const BRANDS = [
     ['', 'default — your tokens'],
-    ['brand-aurora', '--bg:#0e1024 · --accent:#8b87ff · display: Georgia'],
+    ['brand-aurora', '--bg:#0e1024 · --accent:#8b87ff'],
     ['brand-koral',  '--bg:#fff6f2 · --accent:#e4562e'],
-    ['brand-mint',   '--bg:#f2f8f4 · --accent:#0d7a4f · display: mono'],
+    ['brand-mint',   '--bg:#f2f8f4 · --accent:#0d7a4f'],
   ];
   let brandIdx = 0;
   document.getElementById('rebrandBtn').onclick = () => {
