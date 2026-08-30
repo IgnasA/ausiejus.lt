@@ -31,24 +31,24 @@ export default function Home() {
             </p>
           </li>
           <li>
-            <h3>Embeddable onboarding, Railsr</h3>{' '}
+            <h3>Self-service platform, Railsr</h3>{' '}
             <span className="date">— 2021–2025</span>
             <p>
-              Clients needed a regulated card-programme onboarding flow inside
-              their own applications. I built the embeddable onboarding UI for
-              Credit-Card-as-a-Service and the self-service app businesses used
-              to operate their programmes, and helped maintain the component
-              library behind every core product.
+              Business customers needed to operate regulated card programmes
+              themselves. I built and maintained the customer-facing
+              self-service application they used to do it, and an internal
+              tool for surfacing financial data on our customers and their
+              end users.
             </p>
           </li>
           <li>
             <h3>Design system, Equals</h3>{' '}
             <span className="date">— 2025–</span>
             <p>
-              A merger left two codebases and two component libraries. I build
-              and maintain the design system that unified them — one library
-              shipped white-label by partner banks and fintechs, each with its
-              own brand, data, and regulatory constraints.
+              A merger left two codebases, each with its own design system. I
+              build and maintain components across both — shipped white-label
+              by partner banks and fintechs, each with their own brand, data,
+              and regulatory constraints.
             </p>
           </li>
         </ul>

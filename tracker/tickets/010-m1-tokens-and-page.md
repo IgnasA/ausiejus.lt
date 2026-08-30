@@ -38,6 +38,13 @@ still pending the DNSSEC fix in ticket 008):
 - Exhibit copy drafted from the CV and corrected with Ignas: ownership
   claims softened to "helped maintain" (Railsr) and "build and maintain"
   (Equals). The matching CV edits are recorded in m4's cv.pdf step.
+- **Amended after close** (2026-08-30, during m2/m3): deeper factual
+  corrections from Ignas — the Railsr exhibit became "Self-service
+  platform" (self-service app + internal financial-data tool; the
+  embeddable-onboarding claim was dropped), and the Equals exhibit no
+  longer claims unification (two design systems remain separate; he works
+  across both). The CV, which carries the same overstated claims, is
+  flagged in m4.
 - Verified: light and dark rendering, Newsreader via next/font, clean
   console, static export builds green.
 
