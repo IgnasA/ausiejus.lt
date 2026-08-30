@@ -2,7 +2,7 @@
 title: Provision the pipeline
 label: wayfinder:task
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [3]
 ---
