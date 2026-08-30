@@ -2,7 +2,7 @@
 title: The signature interactive moment
 label: wayfinder:prototype
 status: open
-assignee:
+assignee: ignas
 map: ../map.md
 blocked-by: [1, 2]
 ---
@@ -22,3 +22,10 @@ still work for a recruiter who never notices it. Degrades gracefully
 (keyboard, touch, reduced-motion).
 
 Resolved when one moment is chosen and its prototype is linked as an asset.
+
+**Asset**: three candidates behind a `?variant=` switcher —
+`prototype/signature-moment.html` on branch `prototype/signature-moment`
+(`git show prototype/signature-moment:prototype/signature-moment.html`).
+A = "Re-brand this page" (live design-token swap into fake partner brands),
+B = quiet generative layer, C = typographic hero (cursor-weighted
+letterforms). Awaiting Ignas's pick.
