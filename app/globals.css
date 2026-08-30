@@ -1,10 +1,44 @@
-/* Design tokens — the full typed (@property) token system lands in m1.
-   This stub carries the decided editorial-serif palette. */
+/* Design tokens — editorial serif direction (tracker/tickets/005).
+   Typed via @property so token values themselves animate; the m2 canvas
+   reads the interpolating --accent live. */
+
+@property --accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #221d16;
+}
+
+@property --bg {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #faf6ef;
+}
+
+@property --ink {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #221d16;
+}
+
+@property --muted {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #7a6f5f;
+}
+
 :root {
   --bg: #faf6ef;
   --ink: #221d16;
   --muted: #7a6f5f;
   --accent: #221d16;
+
+  --measure: 640px;
+  --size-body: 19px;
+  --size-display: clamp(44px, 8vw, 76px);
+  --size-label: 19px;
+  --gap-section: 11vh;
+
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +58,85 @@
 body {
   background: var(--bg);
   color: var(--ink);
-  font-size: 19px;
+  font-size: var(--size-body);
   line-height: 1.6;
+  transition: background 0.6s ease, color 0.6s ease, --accent 0.6s ease;
+}
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 10vh 24px 16vh;
+}
+
+h1 {
+  font-size: var(--size-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.positioning {
+  max-width: 46ch;
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.meta {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+section {
+  margin-top: var(--gap-section);
+}
+
+h2 {
+  font-size: var(--size-label);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 16px 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+li h3 {
+  display: inline;
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.date {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+li p {
+  color: var(--muted);
+  max-width: 54ch;
+  margin-top: 4px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+footer {
+  margin-top: var(--gap-section);
+  color: var(--muted);
+}
+
+footer a {
+  margin-right: 18px;
 }
