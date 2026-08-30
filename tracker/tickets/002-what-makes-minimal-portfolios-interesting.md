@@ -2,7 +2,7 @@
 title: What makes minimal portfolios interesting
 label: wayfinder:research
 status: open
-assignee:
+assignee: research-agent
 map: ../map.md
 blocked-by: []
 ---
