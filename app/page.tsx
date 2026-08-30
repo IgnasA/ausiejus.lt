@@ -1,16 +1,21 @@
+import ContourField from './components/ContourField';
+import Rebrand from './components/Rebrand';
+
 export default function Home() {
   return (
-    <main>
-      <header>
-        <h1>Ignas Ausiejus</h1>
-        <p className="positioning">
-          Frontend engineer building design systems and white-label products —
-          interfaces other companies ship as their own.
-        </p>
-        <p className="meta">Vilnius · currently at Equals</p>
-      </header>
+    <>
+      <ContourField />
+      <main>
+        <header>
+          <h1>Ignas Ausiejus</h1>
+          <p className="positioning">
+            Frontend engineer building design systems and white-label products —
+            interfaces other companies ship as their own.
+          </p>
+          <Rebrand />
+        </header>
 
-      <section aria-labelledby="work">
+        <section aria-labelledby="work">
         <h2 id="work">Selected work</h2>
         <ul>
           <li>
@@ -47,14 +52,15 @@ export default function Home() {
             </p>
           </li>
         </ul>
-      </section>
+        </section>
 
-      <footer>
-        <a href="mailto:ausiejus.ignas@gmail.com">Email</a>
-        <a href="https://github.com/IgnasA">GitHub</a>
-        <a href="https://www.linkedin.com/in/ignasausiejus">LinkedIn</a>
-        <a href="/cv.pdf">CV</a>
-      </footer>
-    </main>
+        <footer>
+          <a href="mailto:ausiejus.ignas@gmail.com">Email</a>
+          <a href="https://github.com/IgnasA">GitHub</a>
+          <a href="https://www.linkedin.com/in/ignasausiejus">LinkedIn</a>
+          <a href="/cv.pdf">CV</a>
+        </footer>
+      </main>
+    </>
   );
 }

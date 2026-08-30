@@ -50,6 +50,30 @@
   }
 }
 
+/* Fake partner brands — the signature moment swaps these in. Colors only:
+   the name's typeface is identity and never re-brands. The attribute
+   selector outranks :root, so a brand wins in light and dark alike. */
+html[data-brand='aurora'] {
+  --bg: #0e1024;
+  --ink: #eceaf6;
+  --muted: #8f8cb0;
+  --accent: #8b87ff;
+}
+
+html[data-brand='koral'] {
+  --bg: #fff6f2;
+  --ink: #2b1a14;
+  --muted: #8a6355;
+  --accent: #e4562e;
+}
+
+html[data-brand='mint'] {
+  --bg: #f2f8f4;
+  --ink: #12291c;
+  --muted: #5e7a6b;
+  --accent: #0d7a4f;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -67,6 +91,8 @@ main {
   max-width: var(--measure);
   margin: 0 auto;
   padding: 10vh 24px 16vh;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -86,6 +112,48 @@ h1 {
 .meta {
   color: var(--muted);
   margin-top: 12px;
+}
+
+/* The re-brand control: hidden (but space-stable) until JS marks the root,
+   so the no-JS page reads complete with no layout shift on hydration. */
+.rebrand {
+  visibility: hidden;
+}
+
+html.js .rebrand {
+  visibility: visible;
+}
+
+.rebrand button {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.rebrand button:hover,
+.rebrand button:focus-visible {
+  color: var(--ink);
+}
+
+.token-readout {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 8px;
+  min-height: 1.2em;
+  opacity: 0.75;
+}
+
+#field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 section {
@@ -130,6 +198,7 @@ a {
   color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+  transition: color 0.6s ease;
 }
 
 footer {
