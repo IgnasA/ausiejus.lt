@@ -1,23 +1,28 @@
 ---
-title: A pixel atlas of visited countries
+title: An atlas drawn from memory
 label: wayfinder:map
 ---
 
 ## Destination
 
-A live, deployed standalone project: a minimalistic pixelated world map,
-generated at build time from real country geometry, with the countries Ignas
-has visited lit and the rest dimmed — at its own URL, linked from
-ausiejus.lt's work list as a new exhibit. This map carries execution: it ends
-when the site is live and the portfolio links it, not when a spec is written.
+A live, deployed standalone project: a minimalistic world map with abstract,
+rough borders that look human-drawn from memory — generated at build time
+from real country geometry, with the countries Ignas has visited lit and the
+rest dimmed — at its own URL, linked from ausiejus.lt's work list as a new
+exhibit. This map carries execution: it ends when the site is live and the
+portfolio links it, not when a spec is written.
+
+(Originally "A pixel atlas of visited countries"; the pixel aesthetic was
+rejected reacting to the rasterization prototype. File name keeps the old
+slug; the effort is the same.)
 
 ## Notes
 
 - This is an **exhibit** (see [CONTEXT.md](../CONTEXT.md)): the work plus what
-  it proves. What it proves here: **algorithmic/graphics craft** — the pixel
-  map is *computed* from real geodata, not hand-drawn; "pixelated" is the
-  output aesthetic, the substance is the generator. An employer opening the
-  repo should hit the rasterizer in one hop.
+  it proves. What it proves here: **algorithmic/graphics craft** — the map
+  *looks* human-drawn but is *computed* from real geodata (simplification +
+  distortion + stroke rendering); the tension between the two is the point.
+  An employer opening the repo should hit the generator in one hop.
 - Whole world renders: unvisited countries dimmed but present, visited lit.
   The read is "coverage of the world", not floating shapes.
 - Interactivity budget: **light touch** — hover/tap a visited country shows
@@ -43,6 +48,7 @@ when the site is live and the portfolio links it, not when a spec is written.
 - [Geodata source and license](tickets/015-geodata-source.md): Natural Earth 110m via `world-atlas` (public domain, ISO-numeric ids, 39 KB gz, no simplification needed); rasterize with d3-geo `geoContains`; microstates need a centroid fallback.
 - [Name, repo, and URL](tickets/014-name-repo-and-url.md): **Buvau** (Lithuanian, "I've been"), repo `buvau` in the sibling directory, live at `buvau.ausiejus.lt`; the page carries a one-line translation, the exhibit block introduces it in English.
 - [The visited-countries list](tickets/016-visited-countries-list.md): 45 countries transcribed from Ignas's travel app (30 Europe, 10 Asia, 2 Africa, 3 Americas), alpha-2 keyed; no years; Kosovo assumed not visited pending confirmation.
+- [Rasterization prototype — resolution, projection, look](tickets/017-rasterization-prototype.md): five pixel variants built and rejected — the direction is abstract rough borders, human-drawn from memory; geodata pipeline and the small-country-needs-a-synthetic-mark lesson carry over.
 
 ## Not yet specified
 
