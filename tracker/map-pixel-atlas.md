@@ -42,6 +42,7 @@ when the site is live and the portfolio links it, not when a spec is written.
 
 - [Geodata source and license](tickets/015-geodata-source.md): Natural Earth 110m via `world-atlas` (public domain, ISO-numeric ids, 39 KB gz, no simplification needed); rasterize with d3-geo `geoContains`; microstates need a centroid fallback.
 - [Name, repo, and URL](tickets/014-name-repo-and-url.md): **Buvau** (Lithuanian, "I've been"), repo `buvau` in the sibling directory, live at `buvau.ausiejus.lt`; the page carries a one-line translation, the exhibit block introduces it in English.
+- [The visited-countries list](tickets/016-visited-countries-list.md): 45 countries transcribed from Ignas's travel app (30 Europe, 10 Asia, 2 Africa, 3 Americas), alpha-2 keyed; no years; Kosovo assumed not visited pending confirmation.
 
 ## Not yet specified
 
