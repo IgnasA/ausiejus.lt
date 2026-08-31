@@ -25,8 +25,10 @@ slug; the effort is the same.)
   An employer opening the repo should hit the generator in one hop.
 - Whole world renders: unvisited countries dimmed but present, visited lit.
   The read is "coverage of the world", not floating shapes.
-- Interactivity budget: **light touch** — hover/tap a visited country shows
-  its name (maybe year visited). Nothing more.
+- Interactivity budget: hover/tap a visited country shows its name, plus
+  **zoom and pan** (wheel/pinch/drag) — expanded from hover-only by Ignas
+  during the hand-drawn prototype; small countries grow from dots into
+  shapes as you zoom.
 - Extras: one quiet "N countries" line. Everything else is out of scope.
 - Personal-first, **forkable by accident**: the visited list lives in one
   obvious data file; no configuration surface beyond that.
@@ -49,12 +51,10 @@ slug; the effort is the same.)
 - [Name, repo, and URL](tickets/014-name-repo-and-url.md): **Buvau** (Lithuanian, "I've been"), repo `buvau` in the sibling directory, live at `buvau.ausiejus.lt`; the page carries a one-line translation, the exhibit block introduces it in English.
 - [The visited-countries list](tickets/016-visited-countries-list.md): 45 countries transcribed from Ignas's travel app (30 Europe, 10 Asia, 2 Africa, 3 Americas), alpha-2 keyed; no years; Kosovo assumed not visited pending confirmation.
 - [Rasterization prototype — resolution, projection, look](tickets/017-rasterization-prototype.md): five pixel variants built and rejected — the direction is abstract rough borders, human-drawn from memory; geodata pipeline and the small-country-needs-a-synthetic-mark lesson carry over.
+- [Hand-drawn borders prototype — wobble, simplification, stroke](tickets/020-hand-drawn-borders-prototype.md): **Pencil ghost** wins — loose simplification, Equal Earth, faint-pencil unvisited world, ink + hand-hatch for visited, dot-that-grows for small countries, no Antarctica; and the map must be **zoomable** (interaction budget expanded).
 
 ## Not yet specified
 
-- **The page around the map**: layout, typography, where the "N countries"
-  line sits, dark mode, how much visual kinship with ausiejus.lt — sharpens
-  after the rasterization prototype and the naming ticket.
 - **Build plan and quality bar**: milestones, perf/a11y targets, the
   degradation contract for the hover affordance (no-JS, touch,
   reduced-motion) — sharpens after the render-layer ticket.
