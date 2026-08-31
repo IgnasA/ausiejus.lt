@@ -53,6 +53,7 @@ slug; the effort is the same.)
 - [Rasterization prototype — resolution, projection, look](tickets/017-rasterization-prototype.md): five pixel variants built and rejected — the direction is abstract rough borders, human-drawn from memory; geodata pipeline and the small-country-needs-a-synthetic-mark lesson carry over.
 - [Hand-drawn borders prototype — wobble, simplification, stroke](tickets/020-hand-drawn-borders-prototype.md): **Pencil ghost** wins — loose simplification, Equal Earth, faint-pencil unvisited world, ink + hand-hatch for visited, dot-that-grows for small countries, no Antarctica; and the map must be **zoomable** (interaction budget expanded).
 - [Render layer and the hover affordance](tickets/018-render-layer-and-hover.md): canvas + sr-only parallel layer; simplify at build (legible Node generator, ~60KB outlines), draw at runtime with a **per-visit seed** ("redrawn from memory on every visit"); no-JS baseline = fixed-seed SVG snapshot that doubles as the OG image; keyboard `+`/`−`/arrows; fixed readout line, no tooltip.
+- [The page around the map](tickets/021-page-around-the-map.md): **Editorial** wins — Newsreader header in the portfolio's voice with the count and seed-caption folded into the intro sentence, wide map below, serif readout, mono footer (source · ausiejus.lt); plus a **scheme toggle** flipping the whole page between pencil-on-paper and chalk-on-board (defaults to system scheme).
 
 ## Not yet specified
 
