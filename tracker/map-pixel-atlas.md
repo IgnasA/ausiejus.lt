@@ -54,12 +54,12 @@ slug; the effort is the same.)
 - [Hand-drawn borders prototype — wobble, simplification, stroke](tickets/020-hand-drawn-borders-prototype.md): **Pencil ghost** wins — loose simplification, Equal Earth, faint-pencil unvisited world, ink + hand-hatch for visited, dot-that-grows for small countries, no Antarctica; and the map must be **zoomable** (interaction budget expanded).
 - [Render layer and the hover affordance](tickets/018-render-layer-and-hover.md): canvas + sr-only parallel layer; simplify at build (legible Node generator, ~60KB outlines), draw at runtime with a **per-visit seed** ("redrawn from memory on every visit"); no-JS baseline = fixed-seed SVG snapshot that doubles as the OG image; keyboard `+`/`−`/arrows; fixed readout line, no tooltip.
 - [The page around the map](tickets/021-page-around-the-map.md): **Editorial** wins — Newsreader header in the portfolio's voice with the count and seed-caption folded into the intro sentence, wide map below, serif readout, mono footer (source · ausiejus.lt); plus a **scheme toggle** flipping the whole page between pencil-on-paper and chalk-on-board (defaults to system scheme).
+- [Build plan and quality bar](tickets/022-build-plan-and-quality-bar.md): m1 generator+data → m2 canvas sketch → m3 degradation+a11y → m4 chrome+toggle+launch, as chained tickets **in ../buvau/tracker** (Ignas's call — work ships next to the code); portfolio quality bar inherited in both schemes; done = live + exhibit block merged.
 
 ## Not yet specified
 
-- **Portfolio-side integration**: the exhibit block's copy and placement in
-  ausiejus.lt's work list (and whether CV/README mention it) — sharpens as
-  launch nears.
+<!-- empty — every remaining step is a ticket: provisioning (019) and the
+     exhibit block (023) here, build milestones m1–m4 in ../buvau/tracker. -->
 
 ## Out of scope
 
