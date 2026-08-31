@@ -55,6 +55,7 @@ slug; the effort is the same.)
 - [Render layer and the hover affordance](tickets/018-render-layer-and-hover.md): canvas + sr-only parallel layer; simplify at build (legible Node generator, ~60KB outlines), draw at runtime with a **per-visit seed** ("redrawn from memory on every visit"); no-JS baseline = fixed-seed SVG snapshot that doubles as the OG image; keyboard `+`/`−`/arrows; fixed readout line, no tooltip.
 - [The page around the map](tickets/021-page-around-the-map.md): **Editorial** wins — Newsreader header in the portfolio's voice with the count and seed-caption folded into the intro sentence, wide map below, serif readout, mono footer (source · ausiejus.lt); plus a **scheme toggle** flipping the whole page between pencil-on-paper and chalk-on-board (defaults to system scheme).
 - [Build plan and quality bar](tickets/022-build-plan-and-quality-bar.md): m1 generator+data → m2 canvas sketch → m3 degradation+a11y → m4 chrome+toggle+launch, as chained tickets **in ../buvau/tracker** (Ignas's call — work ships next to the code); portfolio quality bar inherited in both schemes; done = live + exhibit block merged.
+- [m1: Generator and data](../../buvau/tracker/tickets/001-m1-generator-and-data.md): shipped — TS generator (Node-native), canonical visited.ts, 47 KB deterministic outlines.json, CONTEXT.md seeded; typecheck + build green at 49 KB total.
 
 ## Not yet specified
 
