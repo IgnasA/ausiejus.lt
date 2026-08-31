@@ -52,12 +52,10 @@ slug; the effort is the same.)
 - [The visited-countries list](tickets/016-visited-countries-list.md): 45 countries transcribed from Ignas's travel app (30 Europe, 10 Asia, 2 Africa, 3 Americas), alpha-2 keyed; no years; Kosovo assumed not visited pending confirmation.
 - [Rasterization prototype — resolution, projection, look](tickets/017-rasterization-prototype.md): five pixel variants built and rejected — the direction is abstract rough borders, human-drawn from memory; geodata pipeline and the small-country-needs-a-synthetic-mark lesson carry over.
 - [Hand-drawn borders prototype — wobble, simplification, stroke](tickets/020-hand-drawn-borders-prototype.md): **Pencil ghost** wins — loose simplification, Equal Earth, faint-pencil unvisited world, ink + hand-hatch for visited, dot-that-grows for small countries, no Antarctica; and the map must be **zoomable** (interaction budget expanded).
+- [Render layer and the hover affordance](tickets/018-render-layer-and-hover.md): canvas + sr-only parallel layer; simplify at build (legible Node generator, ~60KB outlines), draw at runtime with a **per-visit seed** ("redrawn from memory on every visit"); no-JS baseline = fixed-seed SVG snapshot that doubles as the OG image; keyboard `+`/`−`/arrows; fixed readout line, no tooltip.
 
 ## Not yet specified
 
-- **Build plan and quality bar**: milestones, perf/a11y targets, the
-  degradation contract for the hover affordance (no-JS, touch,
-  reduced-motion) — sharpens after the render-layer ticket.
 - **Portfolio-side integration**: the exhibit block's copy and placement in
   ausiejus.lt's work list (and whether CV/README mention it) — sharpens as
   launch nears.
