@@ -57,6 +57,7 @@ slug; the effort is the same.)
 - [Build plan and quality bar](tickets/022-build-plan-and-quality-bar.md): m1 generator+data → m2 canvas sketch → m3 degradation+a11y → m4 chrome+toggle+launch, as chained tickets **in ../buvau/tracker** (Ignas's call — work ships next to the code); portfolio quality bar inherited in both schemes; done = live + exhibit block merged.
 - [m1: Generator and data](../../buvau/tracker/tickets/001-m1-generator-and-data.md): shipped — TS generator (Node-native), canonical visited.ts, 47 KB deterministic outlines.json, CONTEXT.md seeded; typecheck + build green at 49 KB total.
 - [m2: The canvas sketch](../../buvau/tracker/tickets/002-m2-the-canvas-sketch.md): shipped and pushed — both media (pencil/chalk following system scheme), per-visit seed, size-damped wobble, zoom/pan/hover verified in-browser; 56.5 KB bundle.
+- [m3: Degradation and accessibility](../../buvau/tracker/tickets/003-m3-degradation-and-a11y.md): shipped and pushed — fixed-seed SVG snapshot (noscript + og.png), sr-only 45-country list, keyboard zoom/pan/reset on a focusable canvas; real-phone touch pass rides with m4.
 
 ## Not yet specified
 
