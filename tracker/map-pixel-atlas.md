@@ -59,6 +59,7 @@ slug; the effort is the same.)
 - [m2: The canvas sketch](../../buvau/tracker/tickets/002-m2-the-canvas-sketch.md): shipped and pushed — both media (pencil/chalk following system scheme), per-visit seed, size-damped wobble, zoom/pan/hover verified in-browser; 56.5 KB bundle.
 - [m3: Degradation and accessibility](../../buvau/tracker/tickets/003-m3-degradation-and-a11y.md): shipped and pushed — fixed-seed SVG snapshot (noscript + og.png), sr-only 45-country list, keyboard zoom/pan/reset on a focusable canvas; real-phone touch pass rides with m4.
 - [Provision the buvau pipeline](tickets/019-provision-the-pipeline.md): live — github.com/IgnasA/buvau → Vercel → **https://buvau.ausiejus.lt** (200, auto-deploys on push); repo half by agent, Vercel/domain half by Ignas via wizard.
+- [m4: Page chrome and launch](../../buvau/tracker/tickets/004-m4-page-chrome-and-launch.md): **live and measured** — Editorial chrome, ◐ scheme toggle (persisted, no flash), self-hosted fonts after Lighthouse caught the render-block; Lighthouse 100/100/100/100, LCP 1.4s, CLS 0, 69 KiB. Real-phone pass stays with Ignas.
 
 ## Not yet specified
 
