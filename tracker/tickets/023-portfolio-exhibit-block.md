@@ -36,3 +36,8 @@ Grilled and landed:
 Verified rendering and build locally, pushed to main → deployed. The map
 is complete: the destination — live at its own URL, linked from the
 portfolio as an exhibit — is reached.
+
+**Amendment (post-close, Ignas):** the copy drops the personal "countries
+I've been to" framing — Buvau is presented as a general, reusable map:
+"…One data file lights the visited countries; swap it and the map is
+yours." Deployed.

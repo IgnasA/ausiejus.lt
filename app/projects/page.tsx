@@ -39,10 +39,10 @@ export default function Projects() {
             </h3>{' '}
             <span className="date">— 2026</span>
             <p data-tokens="--muted">
-              The countries I&rsquo;ve been to, drawn the way memory draws a
-              map: real geography, aggressively simplified, wobbled by a
-              seeded hand — and redrawn on every visit. Generated at build
-              time from Natural Earth data. Live, with{' '}
+              A hand-drawn world map that is actually generated: real Natural
+              Earth geography, aggressively simplified, wobbled by a seeded
+              hand — redrawn on every visit. One data file lights the visited
+              countries; swap it and the map is yours. Live, with{' '}
               <a href="https://github.com/IgnasA/buvau">source</a>.
             </p>
             <p className="stack">
