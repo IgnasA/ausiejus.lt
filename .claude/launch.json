@@ -9,6 +9,12 @@
         "dev"
       ],
       "port": 3000
+    },
+    {
+      "name": "buvau",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/ignasausiejus/Documents/GitHub/buvau", "--", "--port", "3211", "--strictPort"],
+      "port": 3211
     }
   ]
 }
