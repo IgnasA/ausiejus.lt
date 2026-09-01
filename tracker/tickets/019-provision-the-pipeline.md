@@ -2,7 +2,7 @@
 title: Provision the buvau pipeline
 label: wayfinder:task
 status: open
-assignee:
+assignee: ignas
 map: ../map-pixel-atlas.md
 blocked-by: []
 ---
@@ -24,3 +24,18 @@ portfolio effort:
 
 Unblocked and takeable any time; it acts as this effort's m0. The answer
 records the repo URL and any facts later tickets depend on.
+
+## Progress
+
+- **Done (agent):** local repo built through m1; public GitHub repo
+  created and pushed — https://github.com/IgnasA/buvau ("public from
+  first commit" honored).
+- **Yours (wizard):** the Vercel import + buvau.ausiejus.lt domain +
+  live check. Run:
+
+  ```bash
+  bash /Users/ignasausiejus/Documents/GitHub/buvau/scripts/provision-wizard.sh
+  ```
+
+  (Uncommitted, ephemeral; delete after the run.) Resolution lands here
+  once https://buvau.ausiejus.lt serves the m1 placeholder.
