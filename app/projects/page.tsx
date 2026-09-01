@@ -52,6 +52,22 @@ export default function Projects() {
             </p>
           </li>
           <li>
+            <h3>Cockpit</h3>{' '}
+            <span className="date">— 2026, in progress</span>
+            <span className="tag">personal</span>
+            <p data-tokens="--muted">
+              A private cockpit for running well-known spot trading
+              strategies as configurable templates: backtested and
+              paper-traded first, promotable to real funds only by hand,
+              under hard caps with a kill switch. Each running strategy is
+              its own Fly machine, conducted from the browser. Source opens
+              at launch.
+            </p>
+            <p className="stack">
+              TypeScript · Next.js · Python · Freqtrade · Fly Machines API
+            </p>
+          </li>
+          <li>
             <h3>Self-service platform, Railsr</h3>{' '}
             <span className="date">— 2021–2025</span>
             <span className="tag">work</span>
