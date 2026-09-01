@@ -22,6 +22,7 @@ export default function Projects() {
               <a href="https://trailhead.ausiejus.lt">Trailhead</a>
             </h3>{' '}
             <span className="date">— 2026</span>
+            <span className="tag">personal</span>
             <p data-tokens="--muted">
               My flight history, rebuilt from my inbox. I built the whole
               thing: a Gmail extraction pipeline, a map of every route flown,
@@ -38,6 +39,7 @@ export default function Projects() {
               <a href="https://buvau.ausiejus.lt">Buvau</a>
             </h3>{' '}
             <span className="date">— 2026</span>
+            <span className="tag">personal</span>
             <p data-tokens="--muted">
               A hand-drawn world map that is actually generated: real Natural
               Earth geography, aggressively simplified, wobbled by a seeded
@@ -52,6 +54,7 @@ export default function Projects() {
           <li>
             <h3>Self-service platform, Railsr</h3>{' '}
             <span className="date">— 2021–2025</span>
+            <span className="tag">work</span>
             <p data-tokens="--muted">
               Business customers needed to operate regulated card programmes
               themselves. I built and maintained the customer-facing
@@ -66,6 +69,7 @@ export default function Projects() {
           <li>
             <h3>Design system, Equals</h3>{' '}
             <span className="date">— 2025–</span>
+            <span className="tag">work</span>
             <p data-tokens="--muted">
               A merger left two codebases, each with its own design system. I
               build and maintain components across both — shipped white-label
