@@ -80,6 +80,35 @@ export default function Projects() {
               TypeScript · React · design tokens across two codebases
             </p>
           </li>
+          <li>
+            <h3>Zowe monitoring plugin, Rocket Software</h3>{' '}
+            <span className="date">— 2020–2021</span>
+            <span className="tag">work</span>
+            <p data-tokens="--muted">
+              I rewrote a monitoring application plugin for Zowe, the
+              open-source framework for IBM z/OS, working against mainframe
+              systems and their operational constraints — and contributed to
+              IBM&rsquo;s Carbon Design System along the way.
+            </p>
+            <p className="stack">
+              TypeScript · React · Zowe · IBM z/OS · Carbon Design System
+            </p>
+          </li>
+          <li>
+            <h3>Client platforms, Zenitech</h3>{' '}
+            <span className="date">— 2018–2020</span>
+            <span className="tag">work</span>
+            <p data-tokens="--muted">
+              Embedded with enterprise clients to scope and deliver bespoke
+              systems end to end: a student assessment platform for the
+              University of Cambridge, a search platform for Kobalt Music
+              over a large catalogue of rights data, and a cross-platform
+              mobile app for receipt storage and warranty tracking.
+            </p>
+            <p className="stack">
+              TypeScript · React · Node.js · React Native
+            </p>
+          </li>
         </ul>
       </section>
 
