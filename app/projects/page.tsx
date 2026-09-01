@@ -34,6 +34,22 @@ export default function Projects() {
             </p>
           </li>
           <li>
+            <h3>
+              <a href="https://buvau.ausiejus.lt">Buvau</a>
+            </h3>{' '}
+            <span className="date">— 2026</span>
+            <p data-tokens="--muted">
+              The countries I&rsquo;ve been to, drawn the way memory draws a
+              map: real geography, aggressively simplified, wobbled by a
+              seeded hand — and redrawn on every visit. Generated at build
+              time from Natural Earth data. Live, with{' '}
+              <a href="https://github.com/IgnasA/buvau">source</a>.
+            </p>
+            <p className="stack">
+              TypeScript · Vite · Canvas · a Natural Earth + d3-geo generator
+            </p>
+          </li>
+          <li>
             <h3>Self-service platform, Railsr</h3>{' '}
             <span className="date">— 2021–2025</span>
             <p data-tokens="--muted">
