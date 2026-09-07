@@ -15,6 +15,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "/Users/ignasausiejus/Documents/GitHub/buvau", "--", "--port", "3211", "--strictPort"],
       "port": 3211
+    },
+    {
+      "name": "bench",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/private/tmp/claude-501/-Users-ignasausiejus-Documents-GitHub-portfolio/e2e28290-83dc-4854-a8f4-feaca6bcf6ed/scratchpad/protogen/serve2.mjs"],
+      "port": 3212
     }
   ]
 }

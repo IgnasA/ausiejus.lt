@@ -20,8 +20,7 @@ export default function Projects() {
           <li>
             <h3>
               <a href="https://trailhead.ausiejus.lt">Trailhead</a>
-            </h3>{' '}
-            <span className="date">— 2026</span>
+            </h3>
             <span className="tag">personal</span>
             <p data-tokens="--muted">
               My flight history, rebuilt from my inbox. I built the whole
@@ -37,8 +36,7 @@ export default function Projects() {
           <li>
             <h3>
               <a href="https://buvau.ausiejus.lt">Buvau</a>
-            </h3>{' '}
-            <span className="date">— 2026</span>
+            </h3>
             <span className="tag">personal</span>
             <p data-tokens="--muted">
               A hand-drawn world map that is actually generated: real Natural
@@ -53,7 +51,7 @@ export default function Projects() {
           </li>
           <li>
             <h3>Cockpit</h3>{' '}
-            <span className="date">— 2026, in progress</span>
+            <span className="date">— in progress</span>
             <span className="tag">personal</span>
             <p data-tokens="--muted">
               A private cockpit for running well-known spot trading
@@ -68,8 +66,7 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Self-service platform, Railsr</h3>{' '}
-            <span className="date">— 2021–2025</span>
+            <h3>Self-service platform, Railsr</h3>
             <span className="tag">work</span>
             <p data-tokens="--muted">
               Business customers needed to operate regulated card programmes
@@ -83,8 +80,7 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Design system, Equals</h3>{' '}
-            <span className="date">— 2025–</span>
+            <h3>Design system, Equals</h3>
             <span className="tag">work</span>
             <p data-tokens="--muted">
               A merger left two codebases, each with its own design system. I
@@ -97,8 +93,7 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Zowe monitoring plugin, Rocket Software</h3>{' '}
-            <span className="date">— 2020–2021</span>
+            <h3>Zowe monitoring plugin, Rocket Software</h3>
             <span className="tag">work</span>
             <p data-tokens="--muted">
               I rewrote a monitoring application plugin for Zowe, the
@@ -111,8 +106,7 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Client platforms, Zenitech</h3>{' '}
-            <span className="date">— 2018–2020</span>
+            <h3>Client platforms, Zenitech</h3>
             <span className="tag">work</span>
             <p data-tokens="--muted">
               Embedded with enterprise clients to scope and deliver bespoke
