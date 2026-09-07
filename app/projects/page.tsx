@@ -66,7 +66,9 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Snapback</h3>{' '}
+            <h3>
+              <a href="https://snapback.ausiejus.lt">Snapback</a>
+            </h3>{' '}
             <span className="date">— in progress</span>
             <span className="tag">personal</span>
             <p data-tokens="--muted">
@@ -81,34 +83,25 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Self-service platform, Railsr</h3>
+            <h3>Fintech platforms, Railsr &rarr; Equals</h3>{' '}
+            <span className="date">— 2021–</span>
             <span className="tag">work</span>
             <p data-tokens="--muted">
-              Business customers needed to operate regulated card programmes
-              themselves. I built and maintained the customer-facing
-              self-service application they used to do it, and an internal
-              tool for surfacing financial data on our customers and their
-              end users.
+              Embedded finance, before and after a merger. At Railsr I built
+              and maintained the customer-facing self-service application
+              business customers used to operate regulated card programmes,
+              plus an internal financial-data tool; at Equals I build and
+              maintain components across the two design systems — shipped
+              white-label by partner banks and fintechs.
             </p>
             <p className="stack">
-              TypeScript · React · Redux · Node.js · MongoDB
+              TypeScript · React · Redux · Node.js · MongoDB · design tokens
+              across two codebases
             </p>
           </li>
           <li>
-            <h3>Design system, Equals</h3>
-            <span className="tag">work</span>
-            <p data-tokens="--muted">
-              A merger left two codebases, each with its own design system. I
-              build and maintain components across both — shipped white-label
-              by partner banks and fintechs, each with their own brand, data,
-              and regulatory constraints.
-            </p>
-            <p className="stack">
-              TypeScript · React · design tokens across two codebases
-            </p>
-          </li>
-          <li>
-            <h3>Zowe monitoring plugin, Rocket Software</h3>
+            <h3>Zowe monitoring plugin, Rocket Software</h3>{' '}
+            <span className="date">— 2020–2021</span>
             <span className="tag">work</span>
             <p data-tokens="--muted">
               I rewrote a monitoring application plugin for Zowe, the
@@ -121,7 +114,8 @@ export default function Projects() {
             </p>
           </li>
           <li>
-            <h3>Client platforms, Zenitech</h3>
+            <h3>Client platforms, Zenitech</h3>{' '}
+            <span className="date">— 2018–2020</span>
             <span className="tag">work</span>
             <p data-tokens="--muted">
               Embedded with enterprise clients to scope and deliver bespoke
