@@ -66,6 +66,21 @@ export default function Projects() {
             </p>
           </li>
           <li>
+            <h3>Snapback</h3>{' '}
+            <span className="date">— in progress</span>
+            <span className="tag">personal</span>
+            <p data-tokens="--muted">
+              Webflow&rsquo;s CMS has no undo: one bad edit and client content
+              is gone. I&rsquo;m building a marketplace app for agencies that
+              snapshots Collections, diffs them word by word, and restores in
+              place — read-only by default, with write access as a separate,
+              explicit grant.
+            </p>
+            <p className="stack">
+              TypeScript · Next.js · Postgres · Webflow Data API · Stripe
+            </p>
+          </li>
+          <li>
             <h3>Self-service platform, Railsr</h3>
             <span className="tag">work</span>
             <p data-tokens="--muted">
