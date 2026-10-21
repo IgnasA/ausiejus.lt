@@ -18,7 +18,9 @@ export default function Home() {
       </header>
 
       <nav className="work-link" aria-label="Projects">
-        <Link href="/projects">Projects →</Link>
+        <Link href="/projects">
+          Projects<span aria-hidden="true"> →</span>
+        </Link>
       </nav>
 
       <Footer />
