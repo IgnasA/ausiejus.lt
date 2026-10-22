@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Newsreader } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import ContourField from './components/ContourField';
@@ -25,9 +25,44 @@ const newsreaderItalic = Newsreader({
 const description =
   'Frontend engineer building design systems and white-label products — interfaces other companies ship as their own.';
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#faf6ef' },
+    { media: '(prefers-color-scheme: dark)', color: '#14110c' },
+  ],
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': 'https://ausiejus.lt/#person',
+      name: 'Ignas Ausiejus',
+      url: 'https://ausiejus.lt/',
+      jobTitle: 'Frontend engineer',
+      description,
+      homeLocation: { '@type': 'Place', name: 'Vilnius, Lithuania' },
+      sameAs: [
+        'https://github.com/IgnasA',
+        'https://www.linkedin.com/in/ignasausiejus',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://ausiejus.lt/#website',
+      url: 'https://ausiejus.lt/',
+      name: 'Ignas Ausiejus',
+      inLanguage: 'en',
+      publisher: { '@id': 'https://ausiejus.lt/#person' },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://ausiejus.lt'),
-  title: 'Ignas Ausiejus',
+  title: { default: 'Ignas Ausiejus', template: '%s' },
+  authors: [{ name: 'Ignas Ausiejus', url: 'https://ausiejus.lt' }],
   description,
   alternates: { canonical: '/' },
   openGraph: {
@@ -36,7 +71,14 @@ export const metadata: Metadata = {
     url: '/',
     siteName: 'Ignas Ausiejus',
     type: 'website',
-    images: [{ url: '/og.png', width: 1200, height: 630 }],
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ignas Ausiejus — frontend engineer',
+      },
+    ],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -49,6 +91,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('js')",
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* The field lives in the layout so it — and a picked brand — carry
             across client-side navigation between pages. */}

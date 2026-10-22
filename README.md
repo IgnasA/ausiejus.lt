@@ -18,6 +18,10 @@ npm run dev
 
 `npm run build` produces the static export in `out/`.
 
+SEO files (`robots.txt`, `sitemap.xml`) are generated from `app/robots.ts` and
+`app/sitemap.ts`; JSON-LD lives in `app/layout.tsx`. See
+[docs/AUDIT.md](docs/AUDIT.md) for the latest performance / SEO / a11y audit.
+
 ## How this was built
 
 The site was planned and built ticket-by-ticket with an agent-driven

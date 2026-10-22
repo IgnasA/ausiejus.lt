@@ -330,8 +330,10 @@ section {
   margin-top: 0;
 }
 
-h2 {
+h1.label {
   font-family: var(--font-italic), Georgia, serif;
+  letter-spacing: normal;
+  line-height: inherit;
   font-size: var(--size-label);
   font-weight: 500;
   font-style: italic;
@@ -373,7 +375,7 @@ li {
 
 /* Exhibit titles: weight 500 + full ink against the muted body text — the
    contrast carries the emphasis, and the page ships no bold font file. */
-li h3 {
+li h2 {
   display: inline;
   font-size: inherit;
   font-weight: 500;
