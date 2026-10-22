@@ -1,5 +1,7 @@
 # ausiejus.lt
 
+[![CI](https://github.com/IgnasA/ausiejus.lt/actions/workflows/ci.yml/badge.svg)](https://github.com/IgnasA/ausiejus.lt/actions/workflows/ci.yml)
+
 ## Stack
 
 - Next.js (static export) + TypeScript
