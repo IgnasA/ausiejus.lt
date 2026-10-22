@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 export const metadata: Metadata = {
   title: 'Projects — Ignas Ausiejus',
   description:
-    'Selected work by Ignas Ausiejus: personal builds (Trailhead, Buvau, Cockpit, Snapback) and design-system and fintech work at Equals, Railsr, Rocket Software and Zenitech.',
+    'Selected work by Ignas Ausiejus: personal builds (Statement X-Ray, Trailhead, Buvau, Reels & Shorts Blocker, Cockpit, Snapback) and design-system and fintech work at Equals, Railsr, Rocket Software and Zenitech.',
   alternates: { canonical: '/projects' },
   openGraph: {
     title: 'Projects — Ignas Ausiejus',
@@ -30,6 +30,24 @@ export default function Projects() {
       <section aria-labelledby="projects">
         <h1 id="projects" className="label" data-tokens="--muted --size-label">Projects</h1>
         <ul>
+          <li>
+            <h2>
+              <a href="https://xray.ausiejus.lt">Statement X-Ray</a>
+            </h2>
+            <span className="tag">personal</span>
+            <p data-tokens="--muted">
+              Etsy hands sellers their monthly statements as CSV files, not
+              answers. This one-page tool reads them in the browser &mdash;
+              nothing is uploaded &mdash; says in one sentence what Etsy
+              deducted, then breaks it down by fee. The full report unlocks
+              with a Gumroad license key; there is no server. Live, with{' '}
+              <a href="https://github.com/IgnasA/statement-xray" aria-label="source code for Statement X-Ray">source</a>.
+            </p>
+            <p className="stack">
+              HTML · CSS · JavaScript, one file · client-side CSV parsing ·
+              Gumroad license API · GitHub Pages
+            </p>
+          </li>
           <li>
             <h2>
               <a href="https://trailhead.ausiejus.lt">Trailhead</a>
@@ -60,6 +78,21 @@ export default function Projects() {
             </p>
             <p className="stack">
               TypeScript · Vite · Canvas · a Natural Earth + d3-geo generator
+            </p>
+          </li>
+          <li>
+            <h2>Reels &amp; Shorts Blocker</h2>
+            <span className="tag">personal</span>
+            <p data-tokens="--muted">
+              A Chrome extension that takes Shorts out of YouTube and Reels
+              out of Facebook: shelves, tabs and sidebar entries hidden,
+              Shorts links opened in the normal player, each rule switchable
+              from the toolbar. Installed unpacked for now, with{' '}
+              <a href="https://github.com/IgnasA/reels-shorts-blocker" aria-label="source code for Reels and Shorts Blocker">source</a>.
+            </p>
+            <p className="stack">
+              JavaScript · Chrome Manifest V3 · content scripts ·
+              MutationObserver · chrome.storage
             </p>
           </li>
           <li>
