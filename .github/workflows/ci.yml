@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      # Internal links only: external URLs and mailto: are skipped so the
+      # check can't flake on third-party sites.
+      - name: Check internal links
+        run: >
+          npx --yes linkinator@8.1.0 out
+          --recurse --clean-urls --directory-listing
+          --skip '^https?://(?!localhost|127\.0\.0\.1)'
+          --skip '^mailto:'
